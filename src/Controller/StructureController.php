@@ -36,7 +36,7 @@ class StructureController extends AbstractController
 
         return $this->renderForm('structure/new.html.twig', [
             'structure' => $structure,
-            'form' => $form,
+            'structureForm' => $form,
         ]);
     }
 
@@ -62,7 +62,7 @@ class StructureController extends AbstractController
 
         return $this->renderForm('structure/edit.html.twig', [
             'structure' => $structure,
-            'form' => $form,
+            'structureForm' => $form,
         ]);
     }
 
@@ -74,5 +74,33 @@ class StructureController extends AbstractController
         }
 
         return $this->redirectToRoute('app_structure_index', [], Response::HTTP_SEE_OTHER);
+
+        return $this->render('structure/delete.html.twig', [
+           
+        ]);
     }
+
+        //Make structure valide or not valide 
+        #[Route('/makeItValide/{page}/{id}', name: 'app_structure_valide', methods: ['GET', 'POST'])]
+        public function makeItValideStructure($page, $id, StructureRepository $structureRepository): Response
+        {
+            $structure = $structureRepository->find($id);
+            if ($structure->isIsActive()) {
+                $structure->setIsActive(false);
+            } else {
+                $structure->setIsActive(true);
+            }
+    
+            $structureRepository->add($structure, true);
+    
+            $this->addFlash(
+                'success',
+                'La structure à bien été validé'
+            );
+    
+    
+            return $this->redirectToRoute('app_structure_index', [
+                'page' => $page,
+            ], Response::HTTP_SEE_OTHER);
+        }
 }

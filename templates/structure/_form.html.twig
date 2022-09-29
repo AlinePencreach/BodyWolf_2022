@@ -1,4 +1,38 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="d-flex justify-content-center align-items-center">
+
+	<div class="form-custom container-lg bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
+		<div class="d-flex justify-content-between align-items-start ">
+
+			<h1 class="">Vous êtes sur le point d'enregister une structure sur
+				<span class="text-primary display-5">BodyWolf</span>
+			</h1>
+
+			<div class="">
+				<a class="me-5 btn btn-primary" href="{{ path('app_structure_index') }}">Retour</a>
+			</div>
+
+		</div>
+
+
+		<hr class="my-4">
+		{{ form_start(structureForm) }}
+		<span class="text-secondary">Choisissez un partenaire dans le liste déroulante avant de créer la structure</span>
+		<div class="mt-2">
+			{{ form_row(structureForm.name, {
+            label: 'Nom'
+        }) }}
+			{{ form_row(structureForm.partner, {
+            label: 'Partenaire'
+        }) }}
+			{{ form_row(structureForm.is_active, {
+            label: 'Activer'
+        }) }}
+		</div>
+
+		<button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
+
+	
+
+		{{ form_end(structureForm) }}
+	</div>
+</div>

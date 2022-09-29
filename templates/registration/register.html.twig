@@ -6,10 +6,6 @@
 {% block body %}
 	<div class="d-flex justify-content-center align-items-center">
 
-		{% for flash_error in app.flashes('verify_email_error') %}
-			<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-		{% endfor %}
-
 		<div class="form-custom container-lg bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
 			<h1 class="">Vous êtes sur le point de vous enregister sur
 				<span class="text-primary display-5">BodyWolf</span>

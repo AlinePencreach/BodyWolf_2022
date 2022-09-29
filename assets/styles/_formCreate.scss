@@ -1,0 +1,18 @@
+.form-create {
+    width: 100vw;
+}
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px){ 
+    .form-create {
+        width: 80vw;
+   }
+ }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { 
+    .form-create {
+         width: 70vw;
+    }
+}

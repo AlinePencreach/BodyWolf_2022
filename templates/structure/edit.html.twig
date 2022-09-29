@@ -1,13 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Structure{% endblock %}
+{# {% block title %}Bodywolf{% endblock %} #}
 
 {% block body %}
-    <h1>Edit Structure</h1>
 
-    {{ include('structure/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_structure_index') }}">back to list</a>
-
-    {{ include('structure/_delete_form.html.twig') }}
+    {{ include('structure/_delete_form.html.twig')}}
+    {{ include('structure/_form.html.twig', {'button_label': 'Modifier'}) }}
+    
 {% endblock %}
