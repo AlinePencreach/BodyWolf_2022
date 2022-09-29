@@ -1,22 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+	<div class="d-flex justify-content-center align-items-center">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-         {{ form_row(registrationForm.firstName, {
-            label: 'prénom'
-        }) }}
-         {{ form_row(registrationForm.lastName, {
-            label: 'nom'
-        }) }}
+		{% for flash_error in app.flashes('verify_email_error') %}
+			<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+		{% endfor %}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-{% endblock %}
+		<div class="form-custom container-lg bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
+			<form class="">
+				<h1 class="">Vous êtes sur le point de vous enregister sur
+					<span class="text-primary display-5">BodyWolf</span>
+				</h1>
+
+				<hr class="my-4">
+				{{ form_start(registrationForm) }}
+				<div class="form-label">
+					{{ form_row(registrationForm.lastName, {
+            label: 'Nom',
+        }) }}
+				</div>
+				<div class="form-label">
+					{{ form_row(registrationForm.firstName, {
+            label: 'Prénom'
+        }) }}
+				</div>
+				<div class="form-label">
+					{{ form_row(registrationForm.email, {
+            label: 'Email'
+        }) }}
+					<div class="form-label">
+						{{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+					</div>
+
+
+					<p class="small">Assurez-vous que les informations soit correctes avant de valider</p>
+
+					<button type="submit" class="btn btn-primary">Envoyer</button>
+
+					{{ form_end(registrationForm) }}
+				</form>
+			</div>
+		</div>
+
+	{% endblock %}
