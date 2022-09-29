@@ -37,7 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
-    #[ORM\Column]
+    #[ORM\Column (nullable: true)]
     private ?bool $is_active = null;
 
     #[ORM\OneToMany(mappedBy: 'partner', targetEntity: Structure::class)]
@@ -153,6 +153,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsActive(bool $is_active): self
     {
         $this->is_active = $is_active;
+        $is_active = true;
+       
 
         return $this;
     }
