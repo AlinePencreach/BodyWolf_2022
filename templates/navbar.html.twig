@@ -116,9 +116,8 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div
-			class="collapse navbar-collapse" id="navbarsExample04">
-			{% if is_granted('ROLE_TEAM') %}
+		<div class="collapse navbar-collapse" id="navbarsExample04">
+			{% if is_granted('ROLE_TEAM') and is_granted('IS_AUTHENTICATED_FULLY') %}
 				<ul class="navbar-nav me-auto mb-2 mb-md-0">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Structures</a>
@@ -160,50 +159,75 @@
 								<a class="dropdown-item text-primary" href="#">Les utilisateurs</a>
 							</li>
 
-							 <div class="dropdown-divider"></div>
+							<div class="dropdown-divider"></div>
 
 							<li>
-								<a class="dropdown-item text-primary" href="#">Ajouter Team</a>
+								<a class="dropdown-item text-primary" href="{{ path("app_register_team")}}">Ajouter Team</a>
 							</li>
 							<li>
-								<a class="dropdown-item text-primary" href="#">Ajouter Partenaire</a>
+								<a class="dropdown-item text-primary" href="{{ path("app_register_partner")}}">Ajouter Partenaire</a>
 							</li>
 							<li>
-								<a class="dropdown-item text-primary" href="#">Ajouter Manager</a>
+								<a class="dropdown-item text-primary" href="{{ path("app_register_manager")}}">Ajouter Manager</a>
 							</li>
 
- 
+
 						</ul>
 					</li>
 				</ul>
-			{% else %}
+			{% elseif is_granted("ROLE_PARTNER") and is_granted('IS_AUTHENTICATED_FULLY') %}
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link text-primary" href="#">Accueil</a>
+						<a class="nav-link text-primary" href="#">Votre strucutre</a>
 					</li>
 				</ul>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link text-primary" href="#">Vos salles</a>
+					</li>
+				</ul>
+			{% elseif is_granted("ROLE_MANAGER") and is_granted('IS_AUTHENTICATED_FULLY') %}
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link text-primary" href="#">Votre salle</a>
+					</li>
+				</ul>
+
 			{% endif %}
 
 
-			<form role="search" class="me-3">
-				<input class="form-control text-primary" type="search" placeholder="Recherche" aria-label="Search">
-			</form>
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-			<div class="me-5">
-				<ul class="navbar-nav me-5 mb-2 mb-md-0">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle text-primary d-flex" href="#" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
-						<ul class="dropdown-menu">
-							<li>
-								<a class="dropdown-item text-primary" href="#">Voir profil</a>
-							</li>
-							<li>
-								<a class="dropdown-item text-primary" href="#">Se déconnecter</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+				<form role="search" class="me-3">
+					<input class="form-control text-primary" type="search" placeholder="Recherche" aria-label="Search">
+				</form>
+
+				<div class="me-5">
+					<ul class="navbar-nav me-5 mb-2 mb-md-0">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-primary d-flex" href="#" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item text-primary" href="#">Voir profil</a>
+								</li>
+								<li>
+									<a class="dropdown-item text-primary" href="{{ path("app_logout")}}">Se déconnecter</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+
+			{% else %}
+				<div class="me-5">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link text-primary border-primary btn" href="{{ path("app_login")}}">Se connecter</a>
+						</li>
+					</ul>
+				</div>
+			{% endif %}
 
 
 		</div>
