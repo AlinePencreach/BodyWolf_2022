@@ -11,18 +11,18 @@
 		{% endfor %}
 
 		<div class="form-custom container-lg bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
-			<h1 class="">Vous êtes sur le point d'enregister un Manager
+			<h1 class="">Vous êtes sur le point de vous enregister sur
 				<span class="text-primary display-5">BodyWolf</span>
 			</h1>
 
 			<hr class="my-4">
 
 			{{ form_start(registrationForm) }}
-			{{ form_row(registrationForm.lastName, {
-            label: 'Nom'
-        }) }}
 			{{ form_row(registrationForm.firstName, {
             label: 'Prénom'
+        }) }}
+			{{ form_row(registrationForm.lastName, {
+            label: 'Nom'
         }) }}
 			{{ form_row(registrationForm.email) }}
 			{{ form_row(registrationForm.plainPassword, {

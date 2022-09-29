@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RegistrationController extends AbstractController
 {
-    #[Route('/register/team', name: 'app_register_team')]
+    #[Route('/register/t3456e345657564a567m', name: 'app_register_team')]
     public function registerTeam(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
@@ -54,7 +54,7 @@ class RegistrationController extends AbstractController
 
 
 
-    #[Route('/register/partner', name: 'app_register_partner')]
+    #[Route('/register/p2345a3456r7564534t45678n456787e65787r', name: 'app_register_partner')]
     public function registerPartner(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
@@ -94,7 +94,7 @@ class RegistrationController extends AbstractController
 
 
 
-    #[Route('/register/manager', name: 'app_register_manager')]
+    #[Route('/register/m2356453a8765746354n325467463a45674543g43567e786543r', name: 'app_register_manager')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
