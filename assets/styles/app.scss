@@ -1,6 +1,7 @@
 // Import all of Bootstrap's CSS
+@import "custom";
 @import "~bootstrap/scss/bootstrap";
-
-body {
-    background-color: $secondary;
-}
+@import "body.scss";
+@import "navbar.scss";
+@import "login-form.scss";
+@import "form-custom.scss";

@@ -1,0 +1,21 @@
+#login-form {
+    width: 100vw;
+}
+
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 1000px) { 
+    #login-form {
+         width: 50vw;
+
+    }
+}
+         
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px){ 
+    #login-form {
+        width: 30vw;
+
+    }
+}
