@@ -1,7 +1,16 @@
 body {
     background: $dark;
+    width: 100%;
+    height: 100vh;
 }
 
 a {
     color: $primary;
+}
+
+.bg-img {
+    height: 100%;
+    width: 100%;
+    background: url("/public/images/bg-home.jpg");
+    background-size: cover;
 }
