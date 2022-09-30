@@ -21,6 +21,10 @@
 		{% block navbar %}
 			{% include "navbar.html.twig" %}
 		{% endblock %}
-		{% block body %}{% endblock %}
+			<form role="search" class="d-block d-lg-none m-2">
+				<input class="form-control text-primary" type="search" placeholder="Recherche" aria-label="Search">
+			</form>
+		{% block body %}
+		{% endblock %}
 	</body>
 </html>

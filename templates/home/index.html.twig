@@ -4,33 +4,33 @@
 {% endblock %}
 
 {% block body %}
-	<div class="bg-img text-light d-flex flex-column align-items-center">
+		<div class="bg-img text-light d-flex flex-column align-items-center">
 
-		<div class="display-1  mt-2 mt-lg-5 ">Bienvenue sur
-			<span class="text-primary">BodyWolf</span>
-		</div>
-
-		{% if app.user %}
-		<div class="fs-1  mt-2 mt-lg-5 ">
-			Bonjour
-			<span class="text-primary">{{ app.user.getFirstName}}</span>	
-		</div>
-		
-		{% else %}
-		<div class="d-lg-flex text-black ">
-
-			<div class="text-center fs-1 mb-3 m-5 w-50 bg-light opacity-75 rounded p-5">
-			<p>Pour acceder au site</p> 
-			<a class="btn btn-large btn-primary" href="{{ path('app_login') }}">Connectez-vous</a> 
+			<div class="display-1  mt-2 mt-lg-5 ">Bienvenue sur
+				<span class="text-primary">BodyWolf</span>
 			</div>
 
-			<div class="text-center fs-1 mb-3 m-5 w-50 bg-light opacity-75 rounded p-5">
-				<p>si vous n'êtes pas encore client</p>
-				
-				<a class="btn btn-large btn-primary" href="">Contactez-nous</a>
-			</div>
-		</div>
-		{% endif %}
+			{% if app.user %}
+				<div class="fs-1  mt-2 mt-lg-5 ">
+					Bonjour
+					<span class="text-primary">{{ app.user.getFirstName}}</span>
+				</div>
 
+			{% else %}
+				<div class="d-flex text-black ">
+
+					<div class="text-center fs-1 m-1 m-lg-5 w-50 bg-light rounded p-2 p-lg-5">
+						<p>Pour acceder au site</p>
+						<a class="btn btn-large btn-primary" href="{{ path('app_login') }}">Connectez-vous</a>
+					</div>
+
+					<div class="text-center fs-1 m-1 m-lg-5 w-50 bg-light rounded p-2 p-lg-5">
+						<p>Si vous n'êtes pas encore client</p>
+
+						<a class="btn btn-large btn-primary" href="">Contactez-nous</a>
+					</div>
+				</div>
+			{% endif %}
 		</div>
-	{% endblock %}
+
+{% endblock %}
