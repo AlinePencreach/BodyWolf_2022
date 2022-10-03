@@ -48,6 +48,10 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            ->add('is_active', CheckboxType::class, [
+                'attr' => ['class' => 'checkbox'],
+                'required' => false,
             ]);
     }
 

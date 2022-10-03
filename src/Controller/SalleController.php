@@ -75,4 +75,26 @@ class SalleController extends AbstractController
 
         return $this->redirectToRoute('app_salle_index', [], Response::HTTP_SEE_OTHER);
     }
+
+        //Make salle valide or not valide 
+        #[Route('/makeItValideSalle/{page}/{id}', name: 'app_valide_salle', methods: ['GET', 'POST'])]
+        public function makeItValideSalle($page, $id, SalleRepository $salleRepository): Response
+        {
+            $salle = $salleRepository->find($id);
+            if ($salle->isIsActive()) {
+                $salle->setIsActive(false);
+            } else {
+                $salle->setIsActive(true);
+            }
+    
+            $salleRepository->add($salle, true);
+    
+            $this->addFlash(
+                'success',
+                'Le statut de la salle vient d\'être modifié'
+            );
+    
+    
+            return $this->redirect($_SERVER['HTTP_REFERER']);
+        }
 }
