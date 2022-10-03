@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	{% if is_granted('ROLE_TEAM') %}
+		<div class="d-flex justify-content-center align-items-center">
+
+			<div class="form-create container-xl bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
+				<div class="d-flex justify-content-between align-items-center ">
+					<h1 class="">Les messages
+						<span class="text-primary display-5">BodyWolf</span>
+					</h1>
+
+					{# <div class="d-flex align-items-center justify-content-end">
+						<a class="btn btn-primary text-light me-5" href="{{ path('app_contact_new') }}">Ajouter</a>
+					</div> #}
+				</div>
+
+				<hr class="my-4">
+
+				<table class="table">
+					<thead>
+						<tr class="bg-primary text-light">
+							<th>Status</th>
+							<th>Prénom</th>
+							<th>Nom</th>
+							<th>Email</th>
+							<th>Sujet</th>
+							{# <th>Message</th> #}
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody class="bg-warning">
+						{% for contact in contacts %}
+							<tr>
+								<td>
+									{{ contact.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
+  									<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+									</svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg text-danger" viewBox="0 0 16 16">
+  									<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+									</svg>' }}
+									{# {% set activer = '' %}{% set deactiver = '' %}style="{{ partner.isIsActive ? activer : deactiver }}" #}
+								</td>
+								<td>{{ contact.firstName }}</td>
+								<td>{{ contact.lastName }}</td>
+								<td>{{ contact.email }}</td>
+								<td>{{ contact.sujet }}</td>
+								{# <td>{{ contact.message }}</td> #}
+								<td>
+									<a href="{{ path('app_contact_show', {'id': contact.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
+									<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+									<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+									</svg></a>
+									{# <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">edit</a> #}
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="8">no records found</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

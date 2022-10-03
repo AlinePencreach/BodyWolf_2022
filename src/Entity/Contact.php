@@ -25,11 +25,13 @@ class Contact
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $sujet = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 2550)]
     private ?string $message = null;
 
-    #[ORM\Column]
+
+    #[ORM\Column (nullable: true)]
     private ?bool $is_active = null;
+   
 
     public function getId(): ?int
     {
