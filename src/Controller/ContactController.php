@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 #[Route('/contact')]
 class ContactController extends AbstractController
@@ -76,17 +79,67 @@ class ContactController extends AbstractController
         return $this->redirectToRoute('app_contact_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/contact/makeItValide/{id}', name: 'app_contact_valide', methods: ['GET', 'POST'])]
-    public function makeItValideUser($id, ContactRepository $contactRepository): Response
+    #[Route('/contact/makeItValide/{id}', name: 'app_partner_valide', methods: ['GET', 'POST'])]
+    public function makeItValidePartner($id, ContactRepository $contactRepository, MailerInterface $mailer): Response
     {
         $contact = $contactRepository->find($id);
         if ($contact->isIsActive()) {
             $contact->setIsActive(false);
         } else {
             $contact->setIsActive(true);
+            $email = (new TemplatedEmail())
+            ->from('contact.bodywolf@gmail.com')
+            ->to('contact.bodywolf@gmail.com')
+            // ->to($contact->getEmail())
+            ->subject('Enregistez-vous sur BodyWolf Partenaire')
+
+             // path of the Twig template to render
+            ->htmlTemplate('emails/signupPartner.html.twig')
+    ;
+
+            $mailer->send($email);
+            
         }
 
-        $contactRepository->add($contact, true);
+        $contactRepository->save($contact, true);
+        
+
+
+        $this->addFlash(
+            'success',
+            'L\'utilisateur à bien été valider'
+        );
+
+
+        return $this->redirect($_SERVER['HTTP_REFERER']);
+
+    }
+
+    #[Route('/contact/makeItValide/{id}', name: 'app_manager_valide', methods: ['GET', 'POST'])]
+    public function makeItValideManager($id, ContactRepository $contactRepository, MailerInterface $mailer): Response
+    {
+        $contact = $contactRepository->find($id);
+        // if ($contact->isIsActive()) {
+        //     $contact->setIsActive(false);
+        // } else {
+        //     $contact->setIsActive(true);
+            $email = (new TemplatedEmail())
+            ->from('contact.bodywolf@gmail.com')
+            ->to('contact.bodywolf@gmail.com')
+            // ->to($contact->getEmail())
+            ->subject('Enregistez-vous sur BodyWolf Manager')
+
+             // path of the Twig template to render
+            ->htmlTemplate('emails/signupManager.html.twig')
+    ;
+
+            $mailer->send($email);
+            
+        // }
+
+        $contactRepository->save($contact, true);
+        
+
 
         $this->addFlash(
             'success',
