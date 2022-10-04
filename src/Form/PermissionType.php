@@ -23,7 +23,7 @@ class PermissionType extends AbstractType
                 'attr' => ['class' => 'form-control'],
                 'required' => true,
             ])
-            ->add('salle')
+            // ->add('salle')
             ->add('is_active', CheckboxType::class, [
                 'attr' => ['class' => 'checkbox'],
                 'required' => false,

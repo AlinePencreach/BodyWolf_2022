@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SalleController extends AbstractController
 {
     #[Route('/', name: 'app_salle_index', methods: ['GET'])]
-    public function index(SalleRepository $salleRepository, PermissionRepository $permissionRepository): Response
+    public function index(SalleRepository $salleRepository): Response
     {
         return $this->render('salle/index.html.twig', [
             'salles' => $salleRepository->findAll(),

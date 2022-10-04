@@ -31,8 +31,11 @@ class Salle
     #[ORM\Column]
     private ?bool $is_active = null;
 
-    #[ORM\ManyToMany(targetEntity: Permission::class, mappedBy: 'salle')]
+    #[ORM\ManyToMany(targetEntity: Permission::class, inversedBy: 'salle')]
     private Collection $permissions;
+
+    // #[ORM\ManyToMany(targetEntity: Permission::class, mappedBy: 'salle')]
+    // private Collection $permissions;
 
     public function __construct()
     {
