@@ -86,7 +86,7 @@ class UserController extends AbstractController
             $user->setIsActive(true);
         }
 
-        $userRepository->add($user, true);
+        $userRepository->save($user, true);
 
         $this->addFlash(
             'success',

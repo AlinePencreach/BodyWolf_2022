@@ -91,7 +91,7 @@ class StructureController extends AbstractController
                 $structure->setIsActive(true);
             }
     
-            $structureRepository->add($structure, true);
+            $structureRepository->save($structure, true);
     
             $this->addFlash(
                 'success',
