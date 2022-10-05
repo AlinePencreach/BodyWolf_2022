@@ -21,8 +21,8 @@ class Salle
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
-    #[ORM\OneToMany(mappedBy: 'salle', targetEntity: User::class)]
-    private Collection $manager;
+    // #[ORM\OneToMany(mappedBy: 'salle', targetEntity: User::class)]
+    // private Collection $manager;
 
     #[ORM\ManyToOne(inversedBy: 'salles')]
     #[ORM\JoinColumn(nullable: false)]
@@ -39,7 +39,7 @@ class Salle
 
     public function __construct()
     {
-        $this->manager = new ArrayCollection();
+        // $this->manager = new ArrayCollection();
         $this->permissions = new ArrayCollection();
     }
 
@@ -77,35 +77,35 @@ class Salle
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getManager(): Collection
-    {
-        return $this->manager;
-    }
+    // /**
+    //  * @return Collection<int, User>
+    //  */
+    // public function getManager(): Collection
+    // {
+    //     return $this->manager;
+    // }
 
-    public function addManager(User $manager): self
-    {
-        if (!$this->manager->contains($manager)) {
-            $this->manager->add($manager);
-            $manager->setSalle($this);
-        }
+    // public function addManager(User $manager): self
+    // {
+    //     if (!$this->manager->contains($manager)) {
+    //         $this->manager->add($manager);
+    //         $manager->setSalle($this);
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function removeManager(User $manager): self
-    {
-        if ($this->manager->removeElement($manager)) {
-            // set the owning side to null (unless already changed)
-            if ($manager->getSalle() === $this) {
-                $manager->setSalle(null);
-            }
-        }
+    // public function removeManager(User $manager): self
+    // {
+    //     if ($this->manager->removeElement($manager)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($manager->getSalle() === $this) {
+    //             $manager->setSalle(null);
+    //         }
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getStructure(): ?Structure
     {
