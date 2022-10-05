@@ -46,7 +46,6 @@
 					</a>
 				</td>
                 <td>{{ salle.manager }}</td>
-                <td>{{ salle.isActive ? 'Yes' : 'No' }}</td>
                 <td>
                  <a class="me-3" href="{{ path('app_valide_salle', {'id': salle.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ salle.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
 					<path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
