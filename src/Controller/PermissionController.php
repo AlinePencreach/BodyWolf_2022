@@ -75,4 +75,26 @@ class PermissionController extends AbstractController
 
         return $this->redirectToRoute('app_permission_index', [], Response::HTTP_SEE_OTHER);
     }
+
+           //Make permission valide or not valide 
+           #[Route('/makeItValide/{page}/{id}', name: 'app_permission_valide', methods: ['GET', 'POST'])]
+           public function makeItValideStructure($id, PermissionRepository $permissionRepository): Response
+           {
+               $permission = $permissionRepository->find($id);
+               if ($permission->isIsActive()) {
+                   $permission->setIsActive(false);
+               } else {
+                   $permission->setIsActive(true);
+               }
+       
+               $permissionRepository->save($permission, true);
+       
+               $this->addFlash(
+                   'success',
+                   'La structure à bien été validé'
+               );
+       
+       
+               return $this->redirect($_SERVER['HTTP_REFERER']);
+           }
 }

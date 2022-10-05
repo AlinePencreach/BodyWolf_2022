@@ -56,6 +56,7 @@
 
 					<h1 class="card-title d-flex">
 						{{ permissions.titre }}
+                        
                         <div class="ms-3">
 				        {{permissions.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
   								<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
@@ -65,7 +66,7 @@
 			        </div>
 					</h1>
 
-					{# <a class="ms-3" href="{{ path('app_valide_permission', {'id': permissions.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ permissions.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
+					 <a class="ms-3" href="{{ path('app_permission_valide', {'id': permissions.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ permissions.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
 								<path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
 							</svg></i>' : 
                             '<i class="bi bi-toggle-off text-danger"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +78,7 @@
                             <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(180)"/>
                             </clipPath>
                             </defs>
-                            </svg></i>' }}</a> #}
+                            </svg></i>' }}</a> 
 
 
 				</div>
