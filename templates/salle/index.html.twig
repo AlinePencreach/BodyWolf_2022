@@ -39,13 +39,13 @@
   					<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
 					</svg>' }}
 				{# {% set activer = '' %}{% set deactiver = '' %}style="{{ partner.isIsActive ? activer : deactiver }}" #}
-				</td>
+				</td> 
                 <td>
 					<a href="{{ path('app_salle_show', {'id': salle.id}) }}">
 					{{ salle.name }}
 					</a>
 				</td>
-                <td>{{ salle.getManager }}</td>
+                <td>{{ salle.manager }}</td>
                 <td>{{ salle.isActive ? 'Yes' : 'No' }}</td>
                 <td>
                  <a class="me-3" href="{{ path('app_valide_salle', {'id': salle.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ salle.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
@@ -77,7 +77,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas de salles encore enregistrées.</td>
             </tr>
         {% endfor %}
         </tbody>

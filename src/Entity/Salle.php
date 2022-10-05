@@ -43,6 +43,11 @@ class Salle
         $this->permissions = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -126,6 +131,7 @@ class Salle
         return $this;
     }
 
+
     /**
      * @return Collection<int, Permission>
      */
@@ -153,8 +159,5 @@ class Salle
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->name;
-    }
+   
 }
