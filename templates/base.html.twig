@@ -21,9 +21,11 @@
 		{% block navbar %}
 			{% include "navbar.html.twig" %}
 		{% endblock %}
+		{% if is_granted("ROLE_TEAM") %}
 			<form role="search" class="d-block d-lg-none m-2">
 				<input class="form-control text-primary" type="search" placeholder="Recherche" aria-label="Search">
 			</form>
+		{% endif %}
 		{% block body %}
 		{% endblock %}
 	</body>
