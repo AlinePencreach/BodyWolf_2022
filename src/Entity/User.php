@@ -43,6 +43,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'partner', targetEntity: Structure::class)]
     private Collection $structures;
 
+    #[ORM\OneToOne(mappedBy: 'manager', cascade: ['persist', 'remove'])]
+    private ?Salle $salle = null;
+
     // #[ORM\ManyToOne(inversedBy: 'manager')]
     // private ?Salle $salle = null;
 
@@ -204,5 +207,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
         return $this->email;
+    }
+
+    public function getSalle(): ?Salle
+    {
+        return $this->salle;
+    }
+
+    public function setSalle(?Salle $salle): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($salle === null && $this->salle !== null) {
+            $this->salle->setManager(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($salle !== null && $salle->getManager() !== $this) {
+            $salle->setManager($this);
+        }
+
+        $this->salle = $salle;
+
+        return $this;
     }
 }

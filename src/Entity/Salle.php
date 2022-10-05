@@ -34,6 +34,9 @@ class Salle
     #[ORM\ManyToMany(targetEntity: Permission::class, inversedBy: 'salle')]
     private Collection $permissions;
 
+    #[ORM\OneToOne(inversedBy: 'salle', cascade: ['persist', 'remove'])]
+    private ?User $manager = null;
+
     // #[ORM\ManyToMany(targetEntity: Permission::class, mappedBy: 'salle')]
     // private Collection $permissions;
 
@@ -155,6 +158,18 @@ class Salle
         if ($this->permissions->removeElement($permission)) {
             $permission->removeSalle($this);
         }
+
+        return $this;
+    }
+
+    public function getManager(): ?User
+    {
+        return $this->manager;
+    }
+
+    public function setManager(?User $manager): self
+    {
+        $this->manager = $manager;
 
         return $this;
     }
