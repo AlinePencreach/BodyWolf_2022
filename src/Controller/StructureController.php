@@ -22,6 +22,8 @@ class StructureController extends AbstractController
         ]);
     }
 
+   
+
     #[Route('/new', name: 'app_structure_new', methods: ['GET', 'POST'])]
     public function new(Request $request, StructureRepository $structureRepository): Response
     {
