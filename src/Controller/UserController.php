@@ -21,6 +21,14 @@ class UserController extends AbstractController
         ]);
     }
 
+    #[Route('/profil', name: 'app_profil_index', methods: ['GET'])]
+    public function indexProfil(UserRepository $userRepository): Response
+    {
+        return $this->render('user/profil.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
+
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository): Response
     {

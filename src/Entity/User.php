@@ -203,31 +203,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     //     return $this;
     // }
-
-    public function __toString()
-    {
-        return $this->email;
-    }
-
+    
     public function getSalle(): ?Salle
     {
         return $this->salle;
     }
-
+    
     public function setSalle(?Salle $salle): self
     {
         // unset the owning side of the relation if necessary
         if ($salle === null && $this->salle !== null) {
             $this->salle->setManager(null);
         }
-
+        
         // set the owning side of the relation if necessary
         if ($salle !== null && $salle->getManager() !== $this) {
             $salle->setManager($this);
         }
-
+        
         $this->salle = $salle;
-
+        
         return $this;
     }
+    
+        public function __toString()
+        {
+            return $this->email;
+        }
 }

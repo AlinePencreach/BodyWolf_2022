@@ -79,7 +79,7 @@ class ContactController extends AbstractController
         return $this->redirectToRoute('app_contact_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/contact/makeItValide/{id}', name: 'app_partner_valide', methods: ['GET', 'POST'])]
+    #[Route('/contact/makeItValidePartner/{id}', name: 'app_partner_valide', methods: ['GET', 'POST'])]
     public function makeItValidePartner($id, ContactRepository $contactRepository, MailerInterface $mailer): Response
     {
         $contact = $contactRepository->find($id);
@@ -115,14 +115,14 @@ class ContactController extends AbstractController
 
     }
 
-    #[Route('/contact/makeItValide/{id}', name: 'app_manager_valide', methods: ['GET', 'POST'])]
+    #[Route('/contact/makeItValideManager/{id}', name: 'app_manager_valide', methods: ['GET', 'POST'])]
     public function makeItValideManager($id, ContactRepository $contactRepository, MailerInterface $mailer): Response
     {
         $contact = $contactRepository->find($id);
-        // if ($contact->isIsActive()) {
-        //     $contact->setIsActive(false);
-        // } else {
-        //     $contact->setIsActive(true);
+        if ($contact->isIsActive()) {
+            $contact->setIsActive(false);
+        } else {
+            $contact->setIsActive(true);
             $email = (new TemplatedEmail())
             ->from('contact.bodywolf@gmail.com')
             ->to('contact.bodywolf@gmail.com')
@@ -135,7 +135,7 @@ class ContactController extends AbstractController
 
             $mailer->send($email);
             
-        // }
+         }
 
         $contactRepository->save($contact, true);
         

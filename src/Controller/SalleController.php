@@ -88,7 +88,7 @@ class SalleController extends AbstractController
                 $salle->setIsActive(true);
             }
     
-            $salleRepository->add($salle, true);
+            $salleRepository->save($salle, true);
     
             $this->addFlash(
                 'success',

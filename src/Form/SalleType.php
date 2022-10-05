@@ -29,6 +29,7 @@ class SalleType extends AbstractType
                 'required' => false,
             ])
             ->add('structure')
+            ->add('manager')
             ->add('permissions')
         ;
     }

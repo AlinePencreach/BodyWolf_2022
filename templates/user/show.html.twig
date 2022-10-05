@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
-
 {% block body %}
     <h1>User</h1>
 
@@ -37,8 +35,6 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_user_index') }}">back to list</a>
 
     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
 
