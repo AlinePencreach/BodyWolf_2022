@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="d-flex justify-content-center align-items-center">
+
+			<div class="form-create container-xl bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
+				<div class="d-flex justify-content-between align-items-center ">
+					<h1 class="">Votre profil
+						<span class="text-primary display-5">BodyWolf</span>
+					</h1>
+				</div>
+
+				<hr class="my-4">
     <table class="table">
         <tbody>
             <tr>
@@ -22,5 +32,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_edit', {'id': app.user.id}) }}">Modifier le profil</a>
+    <a class="btn btn-pirmary" href="{{ path('app_user_edit', {'id': app.user.id}) }}">Modifier le profil</a>
 {% endblock %}
