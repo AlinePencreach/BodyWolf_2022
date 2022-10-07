@@ -37,54 +37,48 @@
 
 
 {% block body %}
-	<div class="container-fluid p-3">
-		<div class="display-5 text-center d-flex align-items-center justify-content-center">
-			Vos Options
-		</div>
+	<div class="container-fluid bg-light pb-3">
+		
 		<div class="d-flex align-items-center justify-content-center">
-			<h2>{{ salle.name }}<span
-					class="ms-2 text-primary">
-				</span>
+			<h2 class="display-5">{{ salle.name }}
 			</h2>
+			<p class="ms-3">
+				{{salle.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
+  				<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+				</svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-x-lg text-danger" viewBox="0 0 16 16">
+  				<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+				</svg>' }}
+			</p>
 		</div>
 	</div>
 
-	{% for permissions in salle.permissions %}
-		<div class="card m-2 w-25">
-			<div class="card-body text-center">
-				<div class="d-flex align-items-center justify-content-center">
-
-					<h1 class="card-title d-flex">
-						{{ permissions.titre }}
-                        
-                        <div class="ms-3">
-				        {{permissions.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
+<div class="container d-flex flex-column mt-3 pb-3 bg-dark">
+<div class="display-5 text-center d-flex align-items-center justify-content-center">
+			Les options
+		</div>
+	<div class="container">
+		<div class="row">
+			{% for permissions in salle.permissions %}
+				<div class="col rounded m-2 pe-3 ps-3 bg-light">
+					<div class="d-flex align-items-center justify-content-center mt-3">
+						<h1 class="card-title">
+							{{ permissions.titre }}
+						</h1>
+						<p class="ms-3">
+							{{permissions.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
   								<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
 								</svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-x-lg text-danger" viewBox="0 0 16 16">
   								<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-						</svg>' }}
-			        </div>
-					</h1>
-
-					 <a class="ms-3" href="{{ path('app_permission_valide', {'id': permissions.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ permissions.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
-								<path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
-							</svg></i>' : 
-                            '<i class="bi bi-toggle-off text-danger"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_108_2)">
-                            <path d="M11 13C12.3261 13 13.5979 12.4732 14.5355 11.5355C15.4732 10.5979 16 9.32608 16 8C16 6.67392 15.4732 5.40215 14.5355 4.46447C13.5979 3.52678 12.3261 3 11 3L5 3C3.67392 3 2.40215 3.52679 1.46447 4.46447C0.526784 5.40215 -5.53044e-07 6.67392 -4.37114e-07 8C-3.21184e-07 9.32608 0.526784 10.5979 1.46447 11.5355C2.40215 12.4732 3.67392 13 5 13L11 13ZM5 4C6.06087 4 7.07828 4.42143 7.82843 5.17157C8.57857 5.92172 9 6.93913 9 8C9 9.06087 8.57857 10.0783 7.82843 10.8284C7.07828 11.5786 6.06087 12 5 12C3.93913 12 2.92172 11.5786 2.17157 10.8284C1.42143 10.0783 1 9.06087 1 8C0.999999 6.93914 1.42143 5.92172 2.17157 5.17157C2.92172 4.42143 3.93913 4 5 4Z" fill="#CD3232"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_108_2">
-                            <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(180)"/>
-                            </clipPath>
-                            </defs>
-                            </svg></i>' }}</a> 
-
-
+						        </svg>' }}
+						</p>
+					</div>
+					<hr class="my-4">
+					<p>
+						{{ permissions.description }}
+					</p>
 				</div>
-			</div>
+			{% endfor %}
 		</div>
-	{% endfor %}
+	</div>
+	</div>
 {% endblock %}
-
-

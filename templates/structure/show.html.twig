@@ -2,7 +2,8 @@
 
 
 {% block body %}
-	<div class="container-fluid p-3">
+	<div class="container-fluid bg-light pb-3">
+
 		<div class="display-5 text-center d-flex align-items-center justify-content-center">
 			{{ structure.name }}
 			<div class="ms-3">
@@ -14,27 +15,30 @@
 			</div>
 		</div>
 		<div class="d-flex align-items-center justify-content-center">
-			<h2>Bienvenue<span
-					class="ms-2 text-primary">
-                    {{ structure.getPartner.firstName }}
-                    {{ structure.getPartner.lastName }}
+			<h2>Bienvenue<span class="ms-2 text-primary">
+					{{ structure.getPartner.firstName }}
+					{{ structure.getPartner.lastName }}
 				</span>
 			</h2>
 		</div>
 	</div>
 
-<h1 class="display-2 text-primary">Vos Salles</h1>
-	{% for salles in structure.salles %}
+	<div class="container d-flex flex-column mt-3 pb-3 bg-dark">
+		<h1 class="display-5 text-black text-center">Les salles</h1>
 
-		<div class="card m-2 w-25">
-			<div class="card-body text-center">
-				<div class="d-flex align-items-center justify-content-center">
 
-					<h1 class="card-title">
-						{{ salles.name }}
-					</h1>
+		<div class="container">
+			<div class="row">
+				{% for salles in structure.salles %}
 
-					<a class="ms-3" href="{{ path('app_valide_salle', {'id': salles.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ salles.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
+					<div class="col rounded m-2 pe-3 ps-3 bg-light">
+						<div class="card-body">
+							<div class="d-flex align-items-center justify-content-center mt-3">
+								<h1 class="card-title">
+									{{ salles.name }}
+								</h1>
+
+								<a class="ms-3" href="{{ path('app_valide_salle', {'id': salles.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ salles.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
 								<path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
 							</svg></i>' : 
                             '<i class="bi bi-toggle-off text-danger"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,32 +51,33 @@
                             </clipPath>
                             </defs>
                             </svg></i>' }}</a>
+							</div>
+							<p class="text-center">
+								{{ salles.adresse }}
+							</p>
+							<h2>
+								Partenaire
+							</h2>
+							<p>
+								{{ salles.structure.getPartner.firstName }}
+								{{ salles.structure.getPartner.lastName }}
 
+							</p>
 
-				</div>
-				<p>
-					{{ salles.adresse }}
-				</p>
-				<h2>
-					Partenaire
-				</h2>
-				<p>
-					{{ salles.structure.getPartner.firstName }}
-					{{ salles.structure.getPartner.lastName }}
+							<h2>
+								Manager
+							</h2>
+							<p>
+								{{ salles.manager.firstName }}
+								{{ salles.manager.lastName }}
 
-				</p>
-
-				<h2>
-					Manager
-				</h2>
-				<p>
-				    {{ salles.manager.firstName }}
-				    {{ salles.manager.lastName }}
-
-				</p>
-				<a class="btn btn-primary" href="{{ path('app_salle_show', {'id': salles.id}) }}">Plus de détails sur la salle</a>
+							</p>
+							<div class="d-flex align-items-end justify-content-center mb-3">
+								<a class="btn btn-primary" href="{{ path('app_salle_show', {'id': salles.id}) }}">Plus de détails sur la salle</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
-	{% endfor %}
 {% endblock %}
-

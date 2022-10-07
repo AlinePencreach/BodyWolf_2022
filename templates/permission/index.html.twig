@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Permission index{% endblock %}
-
 {% block body %}
 	{% if is_granted('ROLE_TEAM') %}
 		<div class="d-flex justify-content-center align-items-center">
@@ -22,7 +20,7 @@
 
 				<table class="table">
 					<thead>
-						<tr class="bg-primary text-light">
+						<tr class="bg-primary text-light text-center">
 							<th>Statut</th>
 							<th>Titre</th>
 							<th>Actions</th>
@@ -30,7 +28,7 @@
 					</thead>
 					<tbody class="bg-warning">
         {% for permission in permissions %}
-            <tr>
+            <tr class="text-center">
                 <td>
 				{{ permission.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
   				<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
@@ -41,13 +39,27 @@
 				</td>
                 <td>{{ permission.titre }}</td>
                 <td>
-                    <a href="{{ path('app_permission_show', {'id': permission.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
+                    {# <a class="m-2" href="{{ path('app_permission_show', {'id': permission.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
 									<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
 									<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-									</svg></a>
-                    <a href="{{ path('app_permission_edit', {'id': permission.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-fill" viewbox="0 0 16 16">
+									</svg></a> #}
+                    <a class="m-2" href="{{ path('app_permission_edit', {'id': permission.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-fill" viewbox="0 0 16 16">
 									<path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
 									</svg></a>
+					<a class="m-2" class="me-3" href="{{ path('app_permission_valide', {'id': permission.id, 'page': app.request.get('page') ? app.request.get('page') : 1}) }}">{{ permission.isIsActive ? '  <i class="bi bi-toggle-on text-success"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewbox="0 0 16 16">
+					<path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+					</svg></i>' : 
+                    '<i class="bi bi-toggle-off text-danger"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_108_2)">
+                    <path d="M11 13C12.3261 13 13.5979 12.4732 14.5355 11.5355C15.4732 10.5979 16 9.32608 16 8C16 6.67392 15.4732 5.40215 14.5355 4.46447C13.5979 3.52678 12.3261 3 11 3L5 3C3.67392 3 2.40215 3.52679 1.46447 4.46447C0.526784 5.40215 -5.53044e-07 6.67392 -4.37114e-07 8C-3.21184e-07 9.32608 0.526784 10.5979 1.46447 11.5355C2.40215 12.4732 3.67392 13 5 13L11 13ZM5 4C6.06087 4 7.07828 4.42143 7.82843 5.17157C8.57857 5.92172 9 6.93913 9 8C9 9.06087 8.57857 10.0783 7.82843 10.8284C7.07828 11.5786 6.06087 12 5 12C3.93913 12 2.92172 11.5786 2.17157 10.8284C1.42143 10.0783 1 9.06087 1 8C0.999999 6.93914 1.42143 5.92172 2.17157 5.17157C2.92172 4.42143 3.93913 4 5 4Z" fill="#CD3232"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_108_2">
+                    <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(180)"/>
+                    </clipPath>
+                    </defs>
+                    </svg></i>' }}
+                </a>
                 </td>
             </tr>
         {% else %}

@@ -1,4 +1,49 @@
+<div class="d-flex justify-content-center align-items-center">
+
+	<div class="form-custom container-lg bg-light mt-5 pe-md-5 ps-md-5 pt-3 pb-4 m-1 shadow-sm rounded">
+		<div class="d-flex justify-content-between align-items-start ">
+
+			<h1 class="">Modifier Profil
+				<span class="text-primary display-5">BodyWolf</span>
+			</h1>
+
+			<div class="">
+				<a class="me-5 btn btn-primary" href="{{ path('app_profil_index') }}">Retour</a>
+			</div>
+
+		</div>
+
+
+		<hr class="my-4">
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.email, {
+            label: 'Email'
+        }) }}
+    
+    {{ form_row(form.firstName, {
+            label: 'Prénom'
+        }) }}
+    
+    {{ form_row(form.lastName, {
+            label: 'Nom'
+        }) }}
+    
+    {{ form_row(form.password, {
+            label: 'Mot de passe'
+        }) }}
+
+
+        {% if is_granted("ROLE_TEAM") %}
+    {{ form_row(form.is_active, {
+            label: 'Active'
+        }) }}
+    
+    {{ form_row(form.salle, {
+            label: 'Salle'
+        }) }}
+        {% endif %}
+    
+
+    <button class="btn btn-primary">{{ button_label|default('Enregister') }}</button>
 {{ form_end(form) }}
