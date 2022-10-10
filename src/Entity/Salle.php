@@ -6,8 +6,15 @@ use App\Repository\SalleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: SalleRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get'],
+    itemOperations: ['get'],
+    normalizationContext: ['groups' => ['read'], "enable_max_depth" => true],
+)]
 class Salle
 {
     #[ORM\Id]
@@ -16,9 +23,11 @@ class Salle
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read'])]
     private ?string $adresse = null;
 
     // #[ORM\OneToMany(mappedBy: 'salle', targetEntity: User::class)]
@@ -50,7 +59,7 @@ class Salle
     {
         return $this->name;
     }
-    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -173,6 +182,4 @@ class Salle
 
         return $this;
     }
-
-   
 }
