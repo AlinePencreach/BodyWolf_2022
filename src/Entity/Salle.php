@@ -38,6 +38,7 @@ class Salle
     private ?Structure $structure = null;
 
     #[ORM\Column]
+    #[Groups(['read'])]
     private ?bool $is_active = null;
 
     #[ORM\ManyToMany(targetEntity: Permission::class, inversedBy: 'salle')]
