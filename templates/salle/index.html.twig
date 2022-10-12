@@ -22,6 +22,7 @@
 					<thead>
 						<tr class="bg-primary text-light">
 							<th>Statut</th>
+							<th>Structure</th>
 							<th>Manager</th>
 							<th>Email du manager</th>
 							<th>Actions</th>
@@ -38,6 +39,10 @@
 					</svg>' }}
 				{# {% set activer = '' %}{% set deactiver = '' %}style="{{ partner.isIsActive ? activer : deactiver }}" #}
 				</td> 
+				<td>
+				<a href="{{path('app_structure_show', {'id': salle.getStructure.id})}}">
+				{{ salle.structure }}</a>
+				</td>
                 <td>
 					<a href="{{ path('app_salle_show', {'id': salle.id}) }}">
 					{{ salle.name }}
