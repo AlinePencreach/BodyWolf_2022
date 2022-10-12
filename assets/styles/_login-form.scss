@@ -2,13 +2,14 @@
     width: 100vw;
 }
 
-
-
 // Large devices (desktops, 992px and up)
 @media (min-width: 1040px) { 
     #login-form {
          width: 50vw;
 
+    }
+    .login{
+        height: 100vh;
     }
 }
          
@@ -16,6 +17,8 @@
 @media (min-width: 1400px){ 
     #login-form {
         width: 30vw;
-
+    }
+    .login{
+        height: 100vh;
     }
 }

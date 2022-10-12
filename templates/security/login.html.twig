@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block body %}
-	<div class="d-flex justify-content-center align-items-center">
-		<div class="container-lg bg-light mt-lg-4 mt-1 pe-md-5 ps-md-5 pt-3 pb-4 m-2 shadow-sm rounded" id="login-form">
+	<div class="login d-flex justify-content-center align-items-center bg-primary">
+		<div class="container-lg p-lg-5 shadow rounded bg-light" id="login-form">
 			<form method="post">
 				{% if error %}
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -21,7 +21,7 @@
 
 
 				<h1 class=>Connectez-vous avec vos identifiants
-					<span class="text-primary display-5">BodyWolf</span>
+					<span class=" display-5">BodyWolf</span>
 				</h1>
 				<p class="small">Si vous n'êtes pas encore client BodyWolf
 					<a href="#" class="text-primary fs-6">veuillez nous contacter</a>

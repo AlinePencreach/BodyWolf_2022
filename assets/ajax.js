@@ -5,7 +5,7 @@ let jsStructure;
 let active = document.getElementsById('js-active')
 
 function activeStructure(){
-    if (js-data-structure === isActive) {
+    if (jsStructure === isActive) {
         jsStructure.style.display = 'block'; 
     }else {
         jsStructure.style.display = 'none';

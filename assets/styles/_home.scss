@@ -1,0 +1,20 @@
+.body-home{
+    width: 100vw;
+    height: 100vh;
+    background-color: #034758;
+    overflow: hidden;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .body-home {
+         width: 50vw;
+    }
+}
+
+.img-home{
+    width: 50vw;
+    height: 100vh;
+    background-image: url(/public/images/bg-home.jpg);
+    object-fit: cover;
+}
