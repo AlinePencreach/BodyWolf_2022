@@ -19,7 +19,7 @@
 				{% if app.user %}
 				<div class="fs-4 fw-light m-5 ">
 							Vous êtes connecté
-							<span class="">{{ app.user.getFirstName}}</span>
+							<span class="">{{app.user.getFirstName}} {{ app.user.getLastName}}</span>
 						</div> 
 				{% else %}	
 				<div class="d-flex m-5">
