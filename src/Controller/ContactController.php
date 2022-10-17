@@ -151,4 +151,21 @@ class ContactController extends AbstractController
 
     }
 
+    #[Route('/contact/makeItValide/{id}', name: 'app_contact_valide', methods: ['GET', 'POST'])]
+    public function makeItValide($id, ContactRepository $contactRepository): Response
+    {
+        $contact = $contactRepository->find($id);
+        if ($contact->isIsActive()) {
+            $contact->setIsActive(false);
+        } else {
+            $contact->setIsActive(true);
+         }
+
+        $contactRepository->save($contact, true);
+
+        return $this->redirect($_SERVER['HTTP_REFERER']);
+
+    }
+
+
 }

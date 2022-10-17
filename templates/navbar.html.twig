@@ -1,242 +1,250 @@
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-<nav class="navbar navbar-expand-lg bg-light" aria-label="Fourth navbar example">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="{{ path("app_home")}}">
-			<svg width="112" height="57" viewbox="0 0 132 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<g filter="url(#filter0_i_46_27)">
-					<rect x="31.9551" y="32.2627" width="12.782" height="44.7372" rx="5" fill="#3A4454"/>
-				</g>
-				<rect x="32.4551" y="32.7627" width="11.782" height="43.7372" rx="4.5" stroke="black"/>
-				<g filter="url(#filter1_i_46_27)">
-					<rect x="80.5269" y="32.2627" width="12.782" height="44.7372" rx="5" fill="#3A4454"/>
-				</g>
-				<rect x="81.0269" y="32.7627" width="11.782" height="43.7372" rx="4.5" stroke="black"/>
-				<g filter="url(#filter2_i_46_27)">
-					<rect x="23.0077" y="36.0977" width="8.94743" height="35.7897" rx="4.47372" fill="#3A4454"/>
-				</g>
-				<rect x="23.5077" y="36.5977" width="7.94743" height="34.7897" rx="3.97372" stroke="black"/>
-				<g filter="url(#filter3_i_46_27)">
-					<rect x="15.3384" y="41.21" width="8.94743" height="25.5641" rx="4.47372" fill="#3A4454"/>
-				</g>
-				<rect x="15.8384" y="41.71" width="7.94743" height="24.5641" rx="3.97372" stroke="black"/>
-				<g filter="url(#filter4_i_46_27)">
-					<rect x="102.256" y="41.21" width="8.94743" height="25.5641" rx="4.47372" fill="#3A4454"/>
-				</g>
-				<rect x="102.756" y="41.71" width="7.94743" height="24.5641" rx="3.97372" stroke="black"/>
-				<g filter="url(#filter5_i_46_27)">
-					<rect x="93.309" y="36.0977" width="8.94743" height="35.7897" rx="4.47372" fill="#3A4454"/>
-				</g>
-				<rect x="93.809" y="36.5977" width="7.94743" height="34.7897" rx="3.97372" stroke="black"/>
-				<g filter="url(#filter6_i_46_27)">
-					<rect x="43.459" y="51.4355" width="38.3461" height="6.39102" fill="#3A4454"/>
-				</g>
-				<rect x="43.959" y="51.9355" width="37.3461" height="5.39102" stroke="black"/>
-				<path d="M9.24354 35.6291C9.87359 35.0233 10.2956 34.6475 10.5095 34.5017L5.89902 23.3145C5.58283 23.3871 5.03131 23.4485 4.24444 23.4988L4.06917 23.0735L10.5966 20.3834C12.2978 19.6824 13.6162 19.4346 14.5518 19.6403C15.4947 19.8286 16.1719 20.422 16.5834 21.4205C16.873 22.1232 16.9323 22.827 16.7613 23.532C16.5853 24.2247 16.1659 24.8518 15.5032 25.4133L15.5566 25.5427C16.6197 25.393 17.51 25.5237 18.2274 25.9347C18.952 26.3282 19.449 26.8517 19.7182 27.5051C20.2212 28.7255 20.2335 29.7876 19.7551 30.6914C19.2767 31.5952 18.1931 32.3951 16.5042 33.0911L9.40358 36.0174L9.24354 35.6291ZM12.3139 26.2302C12.844 26.0117 13.1583 25.637 13.2567 25.1061C13.3625 24.5578 13.2629 23.9138 12.9581 23.1742C12.6533 22.4345 12.309 21.9491 11.9253 21.7178C11.5365 21.4743 11.0709 21.4643 10.5284 21.6878L9.69634 22.0307L11.5558 26.5426L12.3139 26.2302ZM15.5184 32.2211C16.5539 31.7944 16.7033 30.6872 15.9666 28.8997C15.6263 28.0738 15.2156 27.5148 14.7347 27.2226C14.2538 26.9305 13.7236 26.9038 13.1442 27.1426L11.9978 27.6151L14.1315 32.7926L15.5184 32.2211Z" fill="#597FA6"/>
-				<path d="M29.8776 28.9653C27.9258 29.5112 26.3224 29.4959 25.0674 28.9193C23.8088 28.3298 22.9586 27.2454 22.5169 25.666C22.0751 24.0866 22.2393 22.7185 23.0095 21.5616C23.7797 20.4048 25.1407 19.5534 27.0924 19.0075C29.0442 18.4616 30.6494 18.4833 31.908 19.0728C33.1666 19.6622 34.0168 20.7466 34.4586 22.326C34.9003 23.9054 34.7361 25.2735 33.9659 26.4304C33.1921 27.5744 31.8294 28.4194 29.8776 28.9653ZM29.5651 27.8482C30.2329 27.6614 30.6706 27.1721 30.8783 26.3802C31.0824 25.5755 31.0174 24.576 30.6834 23.3819C30.3458 22.1749 29.8828 21.2868 29.2944 20.7175C28.7024 20.1355 28.0726 19.9378 27.4049 20.1246C26.7372 20.3113 26.3013 20.8071 26.0971 21.6118C25.8894 22.4037 25.9544 23.4031 26.292 24.6101C26.626 25.8043 27.089 26.6924 27.681 27.2745C28.2694 27.8437 28.8974 28.0349 29.5651 27.8482Z" fill="#597FA6"/>
-				<path d="M46.8562 23.7594C46.3032 25.0601 45.2164 25.8366 43.5959 26.0891C42.1204 26.3189 40.9213 26.1144 39.9986 25.4755C39.0739 24.8234 38.4894 23.7135 38.2452 22.1457C38.0789 21.0786 38.1156 20.1013 38.3552 19.2138C38.6059 18.3111 39.0829 17.5621 39.7863 16.9667C40.4877 16.3582 41.4115 15.9646 42.5576 15.7861C43.5721 15.6281 44.4081 15.7542 45.0658 16.1645L44.5301 12.726C44.1316 12.6801 43.6763 12.6161 43.1643 12.5339L43.1181 12.2375L48.1791 10.943L50.1833 23.8079C50.7045 23.8616 51.1663 23.9246 51.5689 23.9968L51.6059 24.234L47.2747 25.5362L46.8562 23.7594ZM44.5636 24.7643C44.8534 24.7192 45.1233 24.5894 45.3733 24.375C45.6212 24.1475 45.8021 23.8359 45.9159 23.4404C46.0429 23.0428 46.0653 22.5805 45.9832 22.0535L45.2628 17.4293C44.9542 17.1805 44.6239 17.0093 44.2719 16.9157C43.92 16.8221 43.5925 16.7989 43.2895 16.8461C42.5254 16.9651 42.09 17.5052 41.9834 18.4664C41.8878 19.4124 41.9263 20.4387 42.0987 21.5454C42.464 23.8904 43.2856 24.9634 44.5636 24.7643Z" fill="#597FA6"/>
-				<path d="M66.2487 14.1746L66.2643 14.5543C65.6091 14.848 65.1496 15.0336 64.8859 15.1112L61.1115 25.5943C60.7639 26.556 60.3318 27.2476 59.8152 27.669C59.3126 28.1033 58.6283 28.3381 57.7623 28.3736C56.9763 28.4058 56.1139 28.2009 55.175 27.7589L55.7274 26.0949C56.1742 26.2501 56.5593 26.3678 56.8829 26.4479C57.2064 26.5281 57.5147 26.5622 57.8078 26.5502C58.1542 26.536 58.4496 26.4172 58.694 26.1937C58.9389 25.9835 59.1935 25.5193 59.4577 24.8013L59.6203 24.3743L54.6528 15.49C54.115 15.3919 53.6827 15.2628 53.3559 15.1027L53.3395 14.703L59.8941 14.4347L59.9121 14.8744C59.6633 14.9913 59.1087 15.1341 58.2482 15.3028L60.9861 20.5752L63.0009 15.0282C62.4903 14.9423 62.1199 14.8574 61.8896 14.7734L61.8724 14.3538L66.2487 14.1746Z" fill="#597FA6"/>
-				<path d="M70.5013 11.3405C70.202 11.2463 69.9111 11.1327 69.6287 10.9999C69.3607 10.8549 69.1821 10.7583 69.0928 10.71L69.1309 10.2917L76.0622 10.9236L76.0204 11.3817C75.7995 11.4553 75.4983 11.5282 75.1168 11.6006C74.7353 11.6729 74.4703 11.7157 74.3219 11.7289L75.3862 20.5419L79.4263 11.6922L80.9997 11.8356L83.5537 23.0337L86.9278 12.6773C86.3641 12.5455 85.9018 12.403 85.5409 12.2496L85.5827 11.7915L89.8649 12.1819L89.8322 12.5404C89.6777 12.62 89.4707 12.6882 89.2111 12.7448C88.9516 12.8015 88.7409 12.8359 88.5791 12.8479L84.1524 25.7192L80.7266 25.4069L78.802 17.2183L75.309 24.913L72.421 24.6497L70.5013 11.3405Z" fill="#597FA6"/>
-				<path d="M97.9502 28.2416C95.9756 27.7849 94.5759 27.0027 93.7509 25.895C92.9289 24.7743 92.7027 23.4151 93.0723 21.8173C93.4418 20.2194 94.2418 19.0975 95.4724 18.4515C96.7029 17.8055 98.3054 17.7108 100.28 18.1675C102.255 18.6241 103.653 19.4128 104.475 20.5335C105.297 21.6542 105.523 23.0134 105.153 24.6112C104.784 26.2091 103.984 27.331 102.753 27.977C101.526 28.61 99.9247 28.6982 97.9502 28.2416ZM98.2115 27.1114C98.887 27.2676 99.5058 27.048 100.068 26.4527C100.633 25.8443 101.055 24.9361 101.334 23.728C101.617 22.5069 101.636 21.5055 101.393 20.7239C101.152 19.9293 100.694 19.4539 100.019 19.2976C99.3431 19.1414 98.7229 19.3675 98.158 19.9758C97.596 20.5712 97.1739 21.4794 96.8914 22.7005C96.6121 23.9086 96.5926 24.91 96.8331 25.7046C97.0765 26.4862 97.536 26.9552 98.2115 27.1114Z" fill="#597FA6"/>
-				<path d="M105.903 30.2005C106.244 30.1881 106.782 30.1992 107.516 30.2337L111.309 18.8911C110.938 18.6546 110.559 18.3802 110.171 18.0678L110.26 17.8023L115.369 18.9836L111.189 31.4832C111.522 31.6648 111.968 31.9688 112.529 32.3952L112.389 32.8125L105.77 30.5988L105.903 30.2005Z" fill="#597FA6"/>
-				<path d="M125.338 24.4494C124.909 24.2657 124.465 24.286 124.007 24.5102C123.56 24.7397 123.198 25.1793 122.92 25.8289L122.479 26.8585L125.126 27.9921L124.678 29.0401L122.03 27.9065L118.905 35.2056C119.458 35.5731 119.934 35.9362 120.331 36.2949L120.158 36.6994L113.558 33.8734L113.747 33.4321L115.354 33.6417L118.463 26.3793L116.772 25.6551L117.221 24.6071L118.912 25.3313L119.353 24.3018C119.652 23.6031 120.069 23.0856 120.605 22.7493C121.153 22.4182 121.753 22.2543 122.404 22.2576C123.055 22.2608 123.706 22.4016 124.355 22.6797C125.507 23.173 126.397 23.7207 127.024 24.3227L126.446 25.1633C126.149 24.8763 125.779 24.6383 125.338 24.4494Z" fill="#597FA6"/>
-				<defs>
-					<filter id="filter0_i_46_27" x="31.9551" y="32.2627" width="12.782" height="48.7373" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-					<filter id="filter1_i_46_27" x="80.5269" y="32.2627" width="12.782" height="48.7373" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-					<filter id="filter2_i_46_27" x="23.0077" y="36.0977" width="8.94745" height="39.79" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-					<filter id="filter3_i_46_27" x="15.3384" y="41.21" width="8.94745" height="29.5645" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-					<filter id="filter4_i_46_27" x="102.256" y="41.21" width="8.94745" height="29.5645" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-					<filter id="filter5_i_46_27" x="93.309" y="36.0977" width="8.94745" height="39.79" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-					<filter id="filter6_i_46_27" x="43.459" y="51.4355" width="38.3461" height="10.3906" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-						<feOffset dy="4"/>
-						<feGaussianBlur stddeviation="2"/>
-						<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-						<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
-						<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
-					</filter>
-				</defs>
-			</svg>
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+	<nav class="navbar navbar-expand-lg bg-light" aria-label="Fourth navbar example">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{{ path("app_home")}}">
+				<svg width="112" height="57" viewbox="0 0 132 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g filter="url(#filter0_i_46_27)">
+						<rect x="31.9551" y="32.2627" width="12.782" height="44.7372" rx="5" fill="#3A4454"/>
+					</g>
+					<rect x="32.4551" y="32.7627" width="11.782" height="43.7372" rx="4.5" stroke="black"/>
+					<g filter="url(#filter1_i_46_27)">
+						<rect x="80.5269" y="32.2627" width="12.782" height="44.7372" rx="5" fill="#3A4454"/>
+					</g>
+					<rect x="81.0269" y="32.7627" width="11.782" height="43.7372" rx="4.5" stroke="black"/>
+					<g filter="url(#filter2_i_46_27)">
+						<rect x="23.0077" y="36.0977" width="8.94743" height="35.7897" rx="4.47372" fill="#3A4454"/>
+					</g>
+					<rect x="23.5077" y="36.5977" width="7.94743" height="34.7897" rx="3.97372" stroke="black"/>
+					<g filter="url(#filter3_i_46_27)">
+						<rect x="15.3384" y="41.21" width="8.94743" height="25.5641" rx="4.47372" fill="#3A4454"/>
+					</g>
+					<rect x="15.8384" y="41.71" width="7.94743" height="24.5641" rx="3.97372" stroke="black"/>
+					<g filter="url(#filter4_i_46_27)">
+						<rect x="102.256" y="41.21" width="8.94743" height="25.5641" rx="4.47372" fill="#3A4454"/>
+					</g>
+					<rect x="102.756" y="41.71" width="7.94743" height="24.5641" rx="3.97372" stroke="black"/>
+					<g filter="url(#filter5_i_46_27)">
+						<rect x="93.309" y="36.0977" width="8.94743" height="35.7897" rx="4.47372" fill="#3A4454"/>
+					</g>
+					<rect x="93.809" y="36.5977" width="7.94743" height="34.7897" rx="3.97372" stroke="black"/>
+					<g filter="url(#filter6_i_46_27)">
+						<rect x="43.459" y="51.4355" width="38.3461" height="6.39102" fill="#3A4454"/>
+					</g>
+					<rect x="43.959" y="51.9355" width="37.3461" height="5.39102" stroke="black"/>
+					<path d="M9.24354 35.6291C9.87359 35.0233 10.2956 34.6475 10.5095 34.5017L5.89902 23.3145C5.58283 23.3871 5.03131 23.4485 4.24444 23.4988L4.06917 23.0735L10.5966 20.3834C12.2978 19.6824 13.6162 19.4346 14.5518 19.6403C15.4947 19.8286 16.1719 20.422 16.5834 21.4205C16.873 22.1232 16.9323 22.827 16.7613 23.532C16.5853 24.2247 16.1659 24.8518 15.5032 25.4133L15.5566 25.5427C16.6197 25.393 17.51 25.5237 18.2274 25.9347C18.952 26.3282 19.449 26.8517 19.7182 27.5051C20.2212 28.7255 20.2335 29.7876 19.7551 30.6914C19.2767 31.5952 18.1931 32.3951 16.5042 33.0911L9.40358 36.0174L9.24354 35.6291ZM12.3139 26.2302C12.844 26.0117 13.1583 25.637 13.2567 25.1061C13.3625 24.5578 13.2629 23.9138 12.9581 23.1742C12.6533 22.4345 12.309 21.9491 11.9253 21.7178C11.5365 21.4743 11.0709 21.4643 10.5284 21.6878L9.69634 22.0307L11.5558 26.5426L12.3139 26.2302ZM15.5184 32.2211C16.5539 31.7944 16.7033 30.6872 15.9666 28.8997C15.6263 28.0738 15.2156 27.5148 14.7347 27.2226C14.2538 26.9305 13.7236 26.9038 13.1442 27.1426L11.9978 27.6151L14.1315 32.7926L15.5184 32.2211Z" fill="#597FA6"/>
+					<path d="M29.8776 28.9653C27.9258 29.5112 26.3224 29.4959 25.0674 28.9193C23.8088 28.3298 22.9586 27.2454 22.5169 25.666C22.0751 24.0866 22.2393 22.7185 23.0095 21.5616C23.7797 20.4048 25.1407 19.5534 27.0924 19.0075C29.0442 18.4616 30.6494 18.4833 31.908 19.0728C33.1666 19.6622 34.0168 20.7466 34.4586 22.326C34.9003 23.9054 34.7361 25.2735 33.9659 26.4304C33.1921 27.5744 31.8294 28.4194 29.8776 28.9653ZM29.5651 27.8482C30.2329 27.6614 30.6706 27.1721 30.8783 26.3802C31.0824 25.5755 31.0174 24.576 30.6834 23.3819C30.3458 22.1749 29.8828 21.2868 29.2944 20.7175C28.7024 20.1355 28.0726 19.9378 27.4049 20.1246C26.7372 20.3113 26.3013 20.8071 26.0971 21.6118C25.8894 22.4037 25.9544 23.4031 26.292 24.6101C26.626 25.8043 27.089 26.6924 27.681 27.2745C28.2694 27.8437 28.8974 28.0349 29.5651 27.8482Z" fill="#597FA6"/>
+					<path d="M46.8562 23.7594C46.3032 25.0601 45.2164 25.8366 43.5959 26.0891C42.1204 26.3189 40.9213 26.1144 39.9986 25.4755C39.0739 24.8234 38.4894 23.7135 38.2452 22.1457C38.0789 21.0786 38.1156 20.1013 38.3552 19.2138C38.6059 18.3111 39.0829 17.5621 39.7863 16.9667C40.4877 16.3582 41.4115 15.9646 42.5576 15.7861C43.5721 15.6281 44.4081 15.7542 45.0658 16.1645L44.5301 12.726C44.1316 12.6801 43.6763 12.6161 43.1643 12.5339L43.1181 12.2375L48.1791 10.943L50.1833 23.8079C50.7045 23.8616 51.1663 23.9246 51.5689 23.9968L51.6059 24.234L47.2747 25.5362L46.8562 23.7594ZM44.5636 24.7643C44.8534 24.7192 45.1233 24.5894 45.3733 24.375C45.6212 24.1475 45.8021 23.8359 45.9159 23.4404C46.0429 23.0428 46.0653 22.5805 45.9832 22.0535L45.2628 17.4293C44.9542 17.1805 44.6239 17.0093 44.2719 16.9157C43.92 16.8221 43.5925 16.7989 43.2895 16.8461C42.5254 16.9651 42.09 17.5052 41.9834 18.4664C41.8878 19.4124 41.9263 20.4387 42.0987 21.5454C42.464 23.8904 43.2856 24.9634 44.5636 24.7643Z" fill="#597FA6"/>
+					<path d="M66.2487 14.1746L66.2643 14.5543C65.6091 14.848 65.1496 15.0336 64.8859 15.1112L61.1115 25.5943C60.7639 26.556 60.3318 27.2476 59.8152 27.669C59.3126 28.1033 58.6283 28.3381 57.7623 28.3736C56.9763 28.4058 56.1139 28.2009 55.175 27.7589L55.7274 26.0949C56.1742 26.2501 56.5593 26.3678 56.8829 26.4479C57.2064 26.5281 57.5147 26.5622 57.8078 26.5502C58.1542 26.536 58.4496 26.4172 58.694 26.1937C58.9389 25.9835 59.1935 25.5193 59.4577 24.8013L59.6203 24.3743L54.6528 15.49C54.115 15.3919 53.6827 15.2628 53.3559 15.1027L53.3395 14.703L59.8941 14.4347L59.9121 14.8744C59.6633 14.9913 59.1087 15.1341 58.2482 15.3028L60.9861 20.5752L63.0009 15.0282C62.4903 14.9423 62.1199 14.8574 61.8896 14.7734L61.8724 14.3538L66.2487 14.1746Z" fill="#597FA6"/>
+					<path d="M70.5013 11.3405C70.202 11.2463 69.9111 11.1327 69.6287 10.9999C69.3607 10.8549 69.1821 10.7583 69.0928 10.71L69.1309 10.2917L76.0622 10.9236L76.0204 11.3817C75.7995 11.4553 75.4983 11.5282 75.1168 11.6006C74.7353 11.6729 74.4703 11.7157 74.3219 11.7289L75.3862 20.5419L79.4263 11.6922L80.9997 11.8356L83.5537 23.0337L86.9278 12.6773C86.3641 12.5455 85.9018 12.403 85.5409 12.2496L85.5827 11.7915L89.8649 12.1819L89.8322 12.5404C89.6777 12.62 89.4707 12.6882 89.2111 12.7448C88.9516 12.8015 88.7409 12.8359 88.5791 12.8479L84.1524 25.7192L80.7266 25.4069L78.802 17.2183L75.309 24.913L72.421 24.6497L70.5013 11.3405Z" fill="#597FA6"/>
+					<path d="M97.9502 28.2416C95.9756 27.7849 94.5759 27.0027 93.7509 25.895C92.9289 24.7743 92.7027 23.4151 93.0723 21.8173C93.4418 20.2194 94.2418 19.0975 95.4724 18.4515C96.7029 17.8055 98.3054 17.7108 100.28 18.1675C102.255 18.6241 103.653 19.4128 104.475 20.5335C105.297 21.6542 105.523 23.0134 105.153 24.6112C104.784 26.2091 103.984 27.331 102.753 27.977C101.526 28.61 99.9247 28.6982 97.9502 28.2416ZM98.2115 27.1114C98.887 27.2676 99.5058 27.048 100.068 26.4527C100.633 25.8443 101.055 24.9361 101.334 23.728C101.617 22.5069 101.636 21.5055 101.393 20.7239C101.152 19.9293 100.694 19.4539 100.019 19.2976C99.3431 19.1414 98.7229 19.3675 98.158 19.9758C97.596 20.5712 97.1739 21.4794 96.8914 22.7005C96.6121 23.9086 96.5926 24.91 96.8331 25.7046C97.0765 26.4862 97.536 26.9552 98.2115 27.1114Z" fill="#597FA6"/>
+					<path d="M105.903 30.2005C106.244 30.1881 106.782 30.1992 107.516 30.2337L111.309 18.8911C110.938 18.6546 110.559 18.3802 110.171 18.0678L110.26 17.8023L115.369 18.9836L111.189 31.4832C111.522 31.6648 111.968 31.9688 112.529 32.3952L112.389 32.8125L105.77 30.5988L105.903 30.2005Z" fill="#597FA6"/>
+					<path d="M125.338 24.4494C124.909 24.2657 124.465 24.286 124.007 24.5102C123.56 24.7397 123.198 25.1793 122.92 25.8289L122.479 26.8585L125.126 27.9921L124.678 29.0401L122.03 27.9065L118.905 35.2056C119.458 35.5731 119.934 35.9362 120.331 36.2949L120.158 36.6994L113.558 33.8734L113.747 33.4321L115.354 33.6417L118.463 26.3793L116.772 25.6551L117.221 24.6071L118.912 25.3313L119.353 24.3018C119.652 23.6031 120.069 23.0856 120.605 22.7493C121.153 22.4182 121.753 22.2543 122.404 22.2576C123.055 22.2608 123.706 22.4016 124.355 22.6797C125.507 23.173 126.397 23.7207 127.024 24.3227L126.446 25.1633C126.149 24.8763 125.779 24.6383 125.338 24.4494Z" fill="#597FA6"/>
+					<defs>
+						<filter id="filter0_i_46_27" x="31.9551" y="32.2627" width="12.782" height="48.7373" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+						<filter id="filter1_i_46_27" x="80.5269" y="32.2627" width="12.782" height="48.7373" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+						<filter id="filter2_i_46_27" x="23.0077" y="36.0977" width="8.94745" height="39.79" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+						<filter id="filter3_i_46_27" x="15.3384" y="41.21" width="8.94745" height="29.5645" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+						<filter id="filter4_i_46_27" x="102.256" y="41.21" width="8.94745" height="29.5645" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+						<filter id="filter5_i_46_27" x="93.309" y="36.0977" width="8.94745" height="39.79" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+						<filter id="filter6_i_46_27" x="43.459" y="51.4355" width="38.3461" height="10.3906" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+							<feOffset dy="4"/>
+							<feGaussianBlur stddeviation="2"/>
+							<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+							<feColorMatrix type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.25098 0 0 0 0 0.443137 0 0 0 1 0"/>
+							<feBlend mode="normal" in2="shape" result="effect1_innerShadow_46_27"/>
+						</filter>
+					</defs>
+				</svg>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<div class="collapse navbar-collapse" id="navbarsExample04">
-			{% if is_granted('ROLE_TEAM') and is_granted('IS_AUTHENTICATED_FULLY') %}
-				<ul class="navbar-nav me-auto mb-2 mb-md-0">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Structures</a>
-						<ul class="dropdown-menu">
-							<li>
-								<a class="dropdown-item text-primary" href="{{path("app_structure_index")}}">Les structures</a>
-							</li>
-							<li>
-								<a class="dropdown-item text-primary" href="{{path("app_structure_new")}}">Ajouter structure</a>
-							</li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Salles</a>
-						<ul class="dropdown-menu">
-							<li>
-								<a class="dropdown-item text-primary" href="{{path("app_salle_index")}}">Les salles</a>
-							</li>
-							<li>
-								<a class="dropdown-item text-primary" href="{{path("app_salle_new")}}">Ajouter salle</a>
-							</li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
-						<ul class="dropdown-menu">
-							<li>
-								<a class="dropdown-item text-primary" href="{{path("app_permission_index")}}">Les options</a>
-							</li>
-							<li>
-								<a class="dropdown-item text-primary" href="{{path("app_permission_new")}}">Ajouter option</a>
-							</li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Comptes</a>
-						<ul class="dropdown-menu">
-							<li>
-								<a class="dropdown-item text-primary" href="{{ path("app_user_index")}}">Les utilisateurs</a>
-							</li>
-
-							<div class="dropdown-divider"></div>
-
-							<li>
-								<a class="dropdown-item text-primary" href="{{ path("app_register_team")}}">Ajouter Team</a>
-							</li>
-							<li>
-								<a class="dropdown-item text-primary" href="{{ path("app_register_partner")}}">Ajouter Partenaire</a>
-							</li>
-							<li>
-								<a class="dropdown-item text-primary" href="{{ path("app_register_manager")}}">Ajouter Manager</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			{% elseif is_granted("ROLE_PARTNER") and is_granted('IS_AUTHENTICATED_FULLY') %}
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link text-primary" href="{{path('app_structure_show',{'id':app.user.id})}}">Structure</a>
-					</li>
-				</ul>
-
-			{% elseif is_granted("ROLE_MANAGER") and is_granted('IS_AUTHENTICATED_FULLY') %}
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link text-primary" href="{{path('app_salle_show',{'id':app.user.salle.id})}}">Votre salle</a>
-					</li>
-				</ul>
-
-
-			{% endif %}
-
-
-			{% if is_granted("ROLE_TEAM") %}
-			<form role="search" class="me-3 d-lg-block d-none">
-				<input class="form-control text-primary" type="search" placeholder="Recherche" aria-label="Search">
-			</form>
-		
-			<ul class="navbar-nav mb-2 mb-md-0">
-				<li class="nav-item">
-					<a class="nav-link text-primary" href="{{ path("app_contact_index")}}">
-						<svg class="d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-  						<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-						</svg>
-						<p class="d-lg-none d-block">Messages</p>
-					</a>
-				</li>
-			</ul>
-			{% endif %}
-
-							
-			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-				<div class="">
-					<ul class="navbar-nav mb-2 mb-md-0">
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				{% if is_granted('ROLE_TEAM') and is_granted('IS_AUTHENTICATED_FULLY') %}
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle text-primary d-flex" href="#" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
+							<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Structures</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a class="dropdown-item text-primary" href="{{ path("app_profil_index")}}">Voir profil</a>
+									<a class="dropdown-item text-primary" href="{{path("app_structure_index")}}">Les structures</a>
 								</li>
 								<li>
-									<a class="dropdown-item text-primary" href="{{ path("app_logout")}}">Se déconnecter</a>
+									<a class="dropdown-item text-primary" href="{{path("app_structure_new")}}">Ajouter structure</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Salles</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item text-primary" href="{{path("app_salle_index")}}">Les salles</a>
+								</li>
+								<li>
+									<a class="dropdown-item text-primary" href="{{path("app_salle_new")}}">Ajouter salle</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item text-primary" href="{{path("app_permission_index")}}">Les options</a>
+								</li>
+								<li>
+									<a class="dropdown-item text-primary" href="{{path("app_permission_new")}}">Ajouter option</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-primary" href="#" data-bs-toggle="dropdown" aria-expanded="false">Comptes</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item text-primary" href="{{ path("app_user_index")}}">Les utilisateurs</a>
+								</li>
+
+								<div class="dropdown-divider"></div>
+
+								<li>
+									<a class="dropdown-item text-primary" href="{{ path("app_register_team")}}">Ajouter Team</a>
+								</li>
+								<li>
+									<a class="dropdown-item text-primary" href="{{ path("app_register_partner")}}">Ajouter Partenaire</a>
+								</li>
+								<li>
+									<a class="dropdown-item text-primary" href="{{ path("app_register_manager")}}">Ajouter Manager</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
-				</div>
-			<div class="">
-			<ul class="navbar-nav mb-2 mb-md-0">
-				<li class="nav-item">
-					<a class="btn btn-primary text-light" href="{{ path('app_contact_new') }}">Nous contacter</a>
-				</li>
-			</ul>
+				{% elseif is_granted("ROLE_PARTNER") and is_granted('IS_AUTHENTICATED_FULLY') %}
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link text-primary" href="{{path('app_structure_show',{'id':app.user.id})}}">Structure</a>
+						</li>
+					</ul>
+
+				{% elseif is_granted("ROLE_MANAGER") and is_granted('IS_AUTHENTICATED_FULLY') %}
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link text-primary" href="{{path('app_salle_show',{'id':app.user.salle.id})}}">Votre salle</a>
+						</li>
+					</ul>
+
+
+				{% endif %}
+
+
+				{% if is_granted("ROLE_TEAM") %}
+
+					<form role="search" class="me-3 d-lg-block d-none">
+						<input class="form-control text-primary" type="search" placeholder="Recherche" aria-label="Search">
+					</form>
+
+					<ul class="navbar-nav mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link text-primary" href="{{ path("app_contact_index")}}">
+								{# {% for contact in contacts %} #}
+								{# <div class="container d-flex message"> #}
+								<svg class="d-none d-lg-block envelope " xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+  						<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+						</svg>
+								{# {% endfor %} #}
+
+
+
+								<p class="d-lg-none d-block">Messages</p>
+							</a>
+						</li>
+					</ul>
+
+				{% endif %}
+
+
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					<div class="">
+						<ul class="navbar-nav mb-2 mb-md-0">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle text-primary d-flex" href="#" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item text-primary" href="{{ path("app_profil_index")}}">Voir profil</a>
+									</li>
+									<li>
+										<a class="dropdown-item text-primary" href="{{ path("app_logout")}}">Se déconnecter</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="">
+						<ul class="navbar-nav mb-2 mb-md-0">
+							<li class="nav-item">
+								<a class="btn btn-primary text-light" href="{{ path('app_contact_new') }}">Nous contacter</a>
+							</li>
+						</ul>
+					</div>
+				{% endif %}
+
+
 			</div>
-			{% endif %}
-
-
 		</div>
-	</div>
-</nav>
+	</nav>
 {% endif %}
