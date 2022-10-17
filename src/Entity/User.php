@@ -43,6 +43,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'partner', targetEntity: Structure::class)]
     private Collection $structures;
 
+    // #[ORM\OneToOne(mappedBy: 'partner', cascade: ['persist', 'remove'])]
+    // private ?Structure $structure;
+
     #[ORM\OneToOne(mappedBy: 'manager', cascade: ['persist', 'remove'])]
     private ?Salle $salle = null;
 
@@ -230,4 +233,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         {
             return $this->email;
         }
+
+    // /**
+    //  * Get the value of structure
+    //  */ 
+    // public function getStructure()
+    // {
+    //     return $this->structure;
+    // }
+
+    // /**
+    //  * Set the value of structure
+    //  *
+    //  * @return  self
+    //  */ 
+    // public function setStructure($structure)
+    // {
+    //     $this->structure = $structure;
+
+    //     return $this;
+    // }
 }

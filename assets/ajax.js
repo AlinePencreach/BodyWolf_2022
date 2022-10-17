@@ -53,16 +53,16 @@
 // });
 
 
-// let structure = [js-data-structure];
+let structure = [js-data-structure];
 
-// let all = structure.filter(structure => structure);
-// console.log(all);
+let all = structure.filter(structure => structure);
+console.log(all);
 
-// let active = structure.filter(structure => structure.isActive === true);
-// console.log(active);
+let active = structure.filter(structure => structure.isActive === true);
+console.log(active);
 
-// let desactive = structure.filter(structure => structure.isActive === false);
-// console.log(desactive);
+let desactive = structure.filter(structure => structure.isActive === false);
+console.log(desactive);
 
 
 

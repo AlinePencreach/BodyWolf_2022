@@ -44,11 +44,11 @@ class StructureController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_structure_show', methods: ['GET'])]
-    public function show(Structure $structure, Salle $salle): Response
+    public function show(Structure $structure): Response
     {
         return $this->render('structure/show.html.twig', [
             'structure' => $structure,
-            'salle' => $salle,
+            // 'salle' => $salle,
         ]);
     }
 

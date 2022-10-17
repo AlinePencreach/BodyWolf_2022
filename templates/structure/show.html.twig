@@ -29,8 +29,9 @@
 
 		<div class="container">
 			<div class="row">
-				{% for salles in structure.salles %}
-
+			
+				{% for salles in structure.getSalles() %} 
+ 
 					<div class="col rounded m-1 pe-3 ps-3 bg-light text-center">
 						<div class="card-body">
 							<div class="d-flex align-items-center justify-content-center mt-3">
@@ -83,7 +84,7 @@
 								<a class="btn btn-primary" href="{{ path('app_salle_show', {'id': salles.id}) }}">Les Options</a>
 							</div>
 						</div>
-					</div>
+					</div> 
 				{% endfor %}
 			</div>
 		</div>
