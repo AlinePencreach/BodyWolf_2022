@@ -150,4 +150,5 @@ class ContactController extends AbstractController
         return $this->redirect($_SERVER['HTTP_REFERER']);
 
     }
+
 }

@@ -184,7 +184,7 @@
 			{% elseif is_granted("ROLE_MANAGER") and is_granted('IS_AUTHENTICATED_FULLY') %}
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link text-primary" href="#">Votre salle</a>
+						<a class="nav-link text-primary" href="{{path('app_salle_show',{'id':app.user.salle.id})}}">Votre salle</a>
 					</li>
 				</ul>
 

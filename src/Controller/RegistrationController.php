@@ -124,7 +124,8 @@ class RegistrationController extends AbstractController
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_salle_index');
+            // return $this->redirect($_SERVER['HTTP_REFERER']);
         }
 
         return $this->render('registration/register.html.twig', [
