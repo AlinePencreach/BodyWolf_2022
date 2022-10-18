@@ -31,7 +31,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-         - { path: ^/contact, roles: ROLE_TEAM }
          - { path: ^/permission, roles: ROLE_TEAM }
          - { path: ^/structure, roles: ROLE_PARTNER }
          - { path: ^/salle, roles: ROLE_MANAGER }

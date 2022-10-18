@@ -11,11 +11,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 #[Route('/contact')]
 class ContactController extends AbstractController
 {
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/', name: 'app_contact_index', methods: ['GET'])]
     public function index(ContactRepository $contactRepository): Response
     {
@@ -43,6 +45,7 @@ class ContactController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/{id}', name: 'app_contact_show', methods: ['GET'])]
     public function show(Contact $contact): Response
     {
@@ -51,6 +54,7 @@ class ContactController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/{id}/edit', name: 'app_contact_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Contact $contact, ContactRepository $contactRepository): Response
     {
@@ -69,6 +73,7 @@ class ContactController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/{id}', name: 'app_contact_delete', methods: ['POST'])]
     public function delete(Request $request, Contact $contact, ContactRepository $contactRepository): Response
     {
@@ -79,6 +84,7 @@ class ContactController extends AbstractController
         return $this->redirectToRoute('app_contact_index', [], Response::HTTP_SEE_OTHER);
     }
 
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/contact/makeItValidePartner/{id}', name: 'app_partner_valide', methods: ['GET', 'POST'])]
     public function makeItValidePartner($id, ContactRepository $contactRepository, MailerInterface $mailer): Response
     {
@@ -115,6 +121,7 @@ class ContactController extends AbstractController
 
     }
 
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/contact/makeItValideManager/{id}', name: 'app_manager_valide', methods: ['GET', 'POST'])]
     public function makeItValideManager($id, ContactRepository $contactRepository, MailerInterface $mailer): Response
     {
@@ -151,6 +158,7 @@ class ContactController extends AbstractController
 
     }
 
+    #[Security("is_granted('ROLE_TEAM')")]
     #[Route('/contact/makeItValide/{id}', name: 'app_contact_valide', methods: ['GET', 'POST'])]
     public function makeItValide($id, ContactRepository $contactRepository): Response
     {

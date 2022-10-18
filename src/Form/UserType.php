@@ -18,7 +18,7 @@ class UserType extends AbstractType
             ->add('password')
             ->add('is_active')
             ->add('salle')
-            ->add('structures');
+            ->add('structure');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

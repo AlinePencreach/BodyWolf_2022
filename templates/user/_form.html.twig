@@ -7,9 +7,11 @@
 				<span class="display-5">BodyWolf</span>
 			</h1>
 
+{% if is_granted("ROLE_TEAM") %}
 			<div class="">
-				<a class="me-5 btn btn-primary" href="{{ path('app_profil_index') }}">Retour</a>
+				<a class="me-5 btn btn-primary" href="{{ path('app_user_index') }}">Retour</a>
 			</div>
+{% endif %}
 
 		</div>
 
@@ -43,7 +45,7 @@
             label: 'Salle'
         }) }}
 
-          {{ form_row(form.structures, {
+          {{ form_row(form.structure, {
             label: 'Structure'
         }) }}
         
