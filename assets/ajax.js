@@ -1,68 +1,40 @@
-// // filtre :
-// let jsStructure;
+window.addEventListener('DOMContentLoaded', () => {
+   
+    let structure = document.getElementsByClassName("structure");
+    let active = document.getElementsByClassName("structure-active") ;
+    let all = document.getElementsByClassName("structure-row");
+    let desactive = document.getElementsByClassName("structure-inactive");
 
-// // lorsque je clique sur le bouton activés seule les structures activées s'affichent
-// let active = document.getElementsById('js-active')
+    const allBtn = document.querySelector("#js-all");
+    function displayAll(){
+        Array.from(all).forEach(element => {
+            element.classList.remove('d-none');
+        });
+    }
+    
+    const activeBtn = document.querySelector("#js-active");
+    function displayActive(){
+        Array.from(active).forEach(element => {
+            element.classList.remove('d-none');
+        });
+        Array.from(desactive).forEach(element => {
+            element.classList.add('d-none');
+        });
+    }
+    
+    const deactiveBtn = document.querySelector("#js-unactive");
+    function displayDesactive(){
+        Array.from(desactive).forEach(element => {
+            element.classList.remove('d-none');
+        });
+        Array.from(active).forEach(element => {
+            element.classList.add('d-none');
+        });
+    }
 
-// function activeStructure(){
-//     if (jsStructure === isActive) {
-//         jsStructure.style.display = 'block'; 
-//     }else {
-//         jsStructure.style.display = 'none';
-//     }
-// }
-
-// //APPEL DES LISTENER :
-// active.addEventListner('click', function(){
-//     activeStructure();
-// });
-
-
-// // lorsque je clique sur le bouton désactivés seule les structures déactivées s'affichent
-// let unactive = document.getElementsById('js-unactive')
-
-// function unactiveStructure(){
-//     if (js-data-structure === isActive) {
-//         jsStructure.style.display = 'none'; 
-//     }else {
-//         jsStructure.style.display = 'block';
-//     }
-// }
-
-// //APPEL DES LISTENER :
-// unactive.addEventListner('click', function(){
-//     unactiveStructure();
-// });
-
-
-
-// // lorsque je clique sur le bouton toute, toutes les structures s'affichent
-// let all = document.getElementsById('js-all')
-
-// function allStructure(){
-//     if (js-data-structure === isActive) {
-//         jsStructure.style.display = 'block'; 
-//     }else {
-//         jsStructure.style.display = 'block';
-//     }
-// }
-
-// //APPEL DES LISTENER :
-// all.addEventListner('click', function(){
-//     allStructure();
-// });
-
-
-let structure = [js-data-structure];
-
-let all = structure.filter(structure => structure);
-console.log(all);
-
-let active = structure.filter(structure => structure.isActive === true);
-console.log(active);
-
-let desactive = structure.filter(structure => structure.isActive === false);
-console.log(desactive);
-
+    allBtn.addEventListener('click', displayAll);
+    activeBtn.addEventListener('click', displayActive);
+    deactiveBtn.addEventListener('click', displayDesactive);
+});
 
 
