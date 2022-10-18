@@ -32,5 +32,7 @@
         </tbody>
     </table>
 
+{% if is_granted("ROLE_TEAM") %}
     <a class="btn btn-primary" href="{{ path('app_user_edit', {'id': app.user.id}) }}">Modifier le profil</a>
+{% endif %}
 {% endblock %}

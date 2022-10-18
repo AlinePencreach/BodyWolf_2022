@@ -30,9 +30,6 @@ class Salle
     #[Groups(['read'])]
     private ?string $adresse = null;
 
-    // #[ORM\OneToMany(mappedBy: 'salle', targetEntity: User::class)]
-    // private Collection $manager;
-
     #[ORM\ManyToOne(inversedBy: 'salles')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Structure $structure = null;

@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Salle;
 use App\Entity\Structure;
 use App\Form\StructureType;
+use App\Repository\SalleRepository;
 use App\Repository\StructureRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,12 +46,12 @@ class StructureController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_structure_show', methods: ['GET'])]
-    public function show(Structure $structure): Response
+    public function show(Structure $structure, SalleRepository $salleRepository): Response
     {
-        return $this->render('structure/show.html.twig', [
-            'structure' => $structure,
-            // 'salle' => $salle,
-        ]);
+            return $this->render('structure/show.html.twig', [
+                'structure' => $structure,
+                'salleRepository' => $salleRepository->findAll(),
+            ]);
     }
 
     #[Route('/{id}/edit', name: 'app_structure_edit', methods: ['GET', 'POST'])]

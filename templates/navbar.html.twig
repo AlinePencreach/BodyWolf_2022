@@ -177,7 +177,7 @@
 				{% elseif is_granted("ROLE_PARTNER") and is_granted('IS_AUTHENTICATED_FULLY') %}
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link text-primary" href="{{path('app_structure_show',{'id':app.user.id})}}">Structure</a>
+							<a class="nav-link text-primary" href="{{path('app_structure_show',{'id':app.user.structure.id})}}">Structure</a>
 						</li>
 					</ul>
 

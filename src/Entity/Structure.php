@@ -25,9 +25,6 @@ class Structure
     #[ORM\ManyToOne(inversedBy: 'structures')]
     private ?User $partner = null;
 
-    // #[ORM\OneToOne(inversedBy: 'structures', cascade: ['persist', 'remove'])]
-    // private ?User $partner = null;
-
     #[ORM\OneToMany(mappedBy: 'structure', targetEntity: Salle::class)]
     private Collection $salles;
 

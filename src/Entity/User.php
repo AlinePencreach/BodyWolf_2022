@@ -40,11 +40,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column (nullable: true)]
     private ?bool $is_active = null;
 
-    #[ORM\OneToMany(mappedBy: 'partner', targetEntity: Structure::class)]
-    private Collection $structures;
+    // #[ORM\OneToMany(mappedBy: 'partner', targetEntity: Structure::class)]
+    // private Collection $structures;
 
-    // #[ORM\OneToOne(mappedBy: 'partner', cascade: ['persist', 'remove'])]
-    // private ?Structure $structure;
+    #[ORM\OneToOne(mappedBy: 'partner', cascade: ['persist', 'remove'])]
+    private ?Structure $structure;
 
     #[ORM\OneToOne(mappedBy: 'manager', cascade: ['persist', 'remove'])]
     private ?Salle $salle = null;
@@ -54,7 +54,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __construct()
     {
-        $this->structures = new ArrayCollection();
+        // $this->structures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -165,35 +165,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Structure>
-     */
-    public function getStructures(): Collection
-    {
-        return $this->structures;
-    }
+    // /**
+    //  * @return Collection<int, Structure>
+    //  */
+    // public function getStructures(): Collection
+    // {
+    //     return $this->structures;
+    // }
 
-    public function addStructure(Structure $structure): self
-    {
-        if (!$this->structures->contains($structure)) {
-            $this->structures->add($structure);
-            $structure->setPartner($this);
-        }
+    // public function addStructure(Structure $structure): self
+    // {
+    //     if (!$this->structures->contains($structure)) {
+    //         $this->structures->add($structure);
+    //         $structure->setPartner($this);
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function removeStructure(Structure $structure): self
-    {
-        if ($this->structures->removeElement($structure)) {
-            // set the owning side to null (unless already changed)
-            if ($structure->getPartner() === $this) {
-                $structure->setPartner(null);
-            }
-        }
+    // public function removeStructure(Structure $structure): self
+    // {
+    //     if ($this->structures->removeElement($structure)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($structure->getPartner() === $this) {
+    //             $structure->setPartner(null);
+    //         }
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     // public function getSalle(): ?Salle
     // {
@@ -234,23 +234,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             return $this->email;
         }
 
-    // /**
-    //  * Get the value of structure
-    //  */ 
-    // public function getStructure()
-    // {
-    //     return $this->structure;
-    // }
+    /**
+     * Get the value of structure
+     */ 
+    public function getStructure()
+    {
+        return $this->structure;
+    }
 
-    // /**
-    //  * Set the value of structure
-    //  *
-    //  * @return  self
-    //  */ 
-    // public function setStructure($structure)
-    // {
-    //     $this->structure = $structure;
+    /**
+     * Set the value of structure
+     *
+     * @return  self
+     */ 
+    public function setStructure($structure)
+    {
+        $this->structure = $structure;
 
-    //     return $this;
-    // }
+        return $this;
+    }
 }

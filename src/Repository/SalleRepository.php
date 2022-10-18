@@ -39,6 +39,22 @@ class SalleRepository extends ServiceEntityRepository
         }
     }
 
+    //    /**
+    //  * @return Salle[] objects
+    //  */
+
+    // public function findBySalle($value)
+    // {
+    //     return $this->createQueryBuilder('p')
+    //         ->andWhere('p.salle = :val')
+    //         ->setParameter('val', $value)
+    //         ->orderBy('p.id', 'ASC')
+    //         ->getQuery()
+    //         ->getResult();
+    // }
+
+
+
 //    /**
 //     * @return Salle[] Returns an array of Salle objects
 //     */
