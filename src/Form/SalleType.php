@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -19,15 +20,39 @@ class SalleType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'attr' => ['class' => 'form-control'],
+                'constraints' =>[
+                    new NotBlank([
+                        'message' => 'Veillez saisir votre Nom de salle. Ex: BodyWolf Le Vieux Port',
+                    ]),
+                    new Length([
+                        'min' => 10,
+                        'minMessage' => 'Le nom de la salle doit contenir au moins {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 255,
+                    ]),
+                ],
                 'required' => true,
             ])
             ->add('adresse', TextareaType::class, [
-                'attr' => ['class' => 'form-control'],
+                'constraints' =>[
+                    new NotBlank([
+                        'message' => 'Veillez saisir une adresse pour la salle.',
+                    ]),
+                    new Length([
+                        'min' => 5,
+                        'minMessage' => 'L\'adresse de la salle doit contenir au moins {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 255,
+                    ]),
+                ],
                 'required' => true,
             ])
             ->add('is_active', CheckboxType::class, [
-                'attr' => ['class' => 'checkbox'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veillez activer la salle avant de valider',
+                    ]),
+                ],
                 'required' => false,
             ])
             ->add('structure')

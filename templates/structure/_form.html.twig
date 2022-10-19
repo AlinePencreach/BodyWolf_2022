@@ -15,7 +15,10 @@
 
 
 		<hr class="my-4">
-		{{ form_start(structureForm) }}
+		<div class="needs-validation" novalidate>
+
+			{{ form_start(structureForm, {"attr":{ novalidate:'novalidate'}}) }}
+
 		<p class="">Choisissez un partenaire dans le liste déroulante avant de créer la structure</p>
 		<div class="mt-2">
 			{{ form_row(structureForm.name, {
@@ -30,9 +33,7 @@
 		</div>
 
 		<button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
-
-	
-
 		{{ form_end(structureForm) }}
+	</div>
 	</div>
 </div>

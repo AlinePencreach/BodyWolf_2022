@@ -16,8 +16,10 @@
 
 		<hr class="my-4">
 
-{{ form_start(form) }}
-<p class="">Choisissez un partenaire dans le liste déroulante avant de créer la structure</p>
+<div class="needs-validation" novalidate>
+
+			{{ form_start(form, {"attr":{ novalidate:'novalidate'}}) }}
+
 		<div class="mt-2">
    		{{ form_row(form.firstName, {
             label: 'Prenom'

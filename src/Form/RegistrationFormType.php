@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Validator\Constraints\Email;
 
 class RegistrationFormType extends AbstractType
 {
@@ -20,38 +21,71 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('firstName', TextType::class, [
-                'attr' => ['class' => 'form-control'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veillez saisir votre prénom',
+                    ]),
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'Votre prénom doit contenir au moins {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 255,
+                    ]),
+                ],
                 'required' => true,
             ])
             ->add('lastName', TextType::class, [
-                'attr' => ['class' => 'form-control'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veillez saisir votre nom',
+                    ]),
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'Votre nom doit contenir au moins {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 255,
+                    ]),
+                ],
                 'required' => true,
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veillez saisir votre adresse e-mail',
+                    ]),
+                    new Email([
+                        'message' => 'Veillez saisir une adresse e-mail correcte',
+                    ])
+                ],
                 'required' => true,
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password',
-                'class' => 'form-control'],
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    // 'class' => 'form-control'
+                ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veillez saisir un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 255,
                     ]),
                 ],
             ])
             ->add('is_active', CheckboxType::class, [
-                'attr' => ['class' => 'checkbox'],
-                'required' => false,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veillez activer la compte avant de valider',
+                    ]),
+                ],
+                'required' => true,
             ]);
     }
 

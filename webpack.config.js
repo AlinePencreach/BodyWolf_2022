@@ -25,6 +25,7 @@ Encore
     .addEntry('optionFilter', './assets/optionFilter.js')
     .addEntry('userFilter', './assets/userFilter.js')
     .addEntry('messageFilter', './assets/messageFilter.js')
+    .addEntry('validation', './assets/validation.js')
     .addEntry('app', './assets/app.js')
     
 

@@ -15,22 +15,20 @@
 
 
 		<hr class="my-4">
+		<div class="needs-validation" novalidate>
 
-{{ form_start(form) }}
-   		{{ form_row(form.titre, {
+			{{ form_start(form, {"attr":{ novalidate:'novalidate'}}) }}
+			{{ form_row(form.titre, {
             label: 'Titre'
         }) }}
-        {{ form_row(form.description, {
+			{{ form_row(form.description, {
             label: 'Description'
         }) }}
 
-        {# <span class="">Choisissez un partenaire dans le liste déroulante avant de créer la structure</span>
-        {{ form_row(form.salle, {
-            label: 'Salle'
-        }) }} #}
 
-        {{ form_row(form.is_active, {
+			{{ form_row(form.is_active, {
             label: 'Option activée'
         }) }}
-    <button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
-{{ form_end(form) }}
+			<button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
+			{{ form_end(form) }}
+		</div>

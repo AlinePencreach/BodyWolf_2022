@@ -9,27 +9,37 @@
 			</h1>
 
 			<hr class="my-4">
+			<div class="needs-validation" novalidate>
 
-			{{ form_start(registrationForm) }}
-			{{ form_row(registrationForm.firstName, {
+				{{ form_start(registrationForm, {"attr":{ novalidate:'novalidate'}}) }}
+				
+
+				{{ form_row(registrationForm.firstName, {
             label: 'Prénom'
-        }) }}
-			{{ form_row(registrationForm.lastName, {
+		}) }}
+				
+
+				{{ form_row(registrationForm.lastName, {
             label: 'Nom'
         }) }}
-			{{ form_row(registrationForm.email) }}
-			{{ form_row(registrationForm.plainPassword, {
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-			{{ form_row(registrationForm.is_active, {
+				{{ form_row(registrationForm.is_active, {
             label: 'Activer le compte'
         }) }}
 
-			<p class="small mb-3">Assurez-vous que les informations soient correctes avant de valider</p>
+				<p class="small mb-3">Assurez-vous que les informations soient correctes avant de valider</p>
 
-			<button type="submit" class="btn btn-primary">Envoyer</button>
-			{{ form_end(registrationForm) }}
+				<button type="submit" class="btn btn-primary">Envoyer</button>
+				{{ form_end(registrationForm) }}
+
+			</div>
+
 		</div>
 	</div>
-
+{% endblock %}
+{% block javascripts %}
+	{{ encore_entry_script_tags('validation') }}
 {% endblock %}
