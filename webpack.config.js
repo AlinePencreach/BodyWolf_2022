@@ -20,7 +20,11 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('ajax', './assets/ajax.js')
+    .addEntry('structureFilter', './assets/structureFilter.js')
+    .addEntry('salleFilter', './assets/salleFilter.js')
+    .addEntry('optionFilter', './assets/optionFilter.js')
+    .addEntry('userFilter', './assets/userFilter.js')
+    .addEntry('messageFilter', './assets/messageFilter.js')
     .addEntry('app', './assets/app.js')
     
 

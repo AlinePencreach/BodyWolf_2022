@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
    
-    let structure = document.getElementsByClassName("structure");
     let active = document.getElementsByClassName("structure-active") ;
     let all = document.getElementsByClassName("structure-row");
     let desactive = document.getElementsByClassName("structure-inactive");
