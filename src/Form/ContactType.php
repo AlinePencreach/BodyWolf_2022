@@ -25,7 +25,7 @@ class ContactType extends AbstractType
                         'message' => 'Veillez saisir votre Prénom.',
                     ]),
                     new Length([
-                        'min' => 10,
+                        'min' => 3,
                         'minMessage' => 'Le nom de la salle doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 255,
@@ -39,7 +39,7 @@ class ContactType extends AbstractType
                         'message' => 'Veillez saisir votre Nom.',
                     ]),
                     new Length([
-                        'min' => 10,
+                        'min' => 3,
                         'minMessage' => 'Le nom de la salle doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 255,
