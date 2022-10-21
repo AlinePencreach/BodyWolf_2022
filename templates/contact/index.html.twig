@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-<title>
-			{% block title %}Bodywolf - Liste des messages
-			{% endblock %}
-</title>
+
+	{% block title %}Bodywolf - Liste des messages
+	{% endblock %}
+
 
 
 {% block body %}
@@ -17,8 +17,8 @@
 					</h1>
 
 					{# <div class="d-flex align-items-center justify-content-end">
-						<a class="btn btn-primary text-light me-5" href="{{ path('app_contact_new') }}">Ajouter</a>
-					</div> #}
+																					<a class="btn btn-primary text-light me-5" href="{{ path('app_contact_new') }}">Ajouter</a>
+																				</div> #}
 				</div>
 
 				<hr class="my-4">
@@ -43,7 +43,7 @@
 						</button>
 						<ul class="dropdown-menu">
 							<li>
-								<a class="dropdown-item" id="js-all" type='button' >Tous</a>
+								<a class="dropdown-item" id="js-all" type='button'>Tous</a>
 							</li>
 							<li>
 								<a class="dropdown-item" id="js-active" type='button'>lu</a>
@@ -56,7 +56,7 @@
 					</div>
 					<tbody class="bg-warning">
 						{% for contact in contacts %}
-							<tr class="message-row {{contact.isActive ? "message-active" : "message-inactive"}}">
+							<tr class="message-row {{contact.isActive ? " message-active" : " message-inactive"}}">
 
 								<td>
 									{{ contact.isActive ? '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-lg text-success" viewBox="0 0 16 16">
@@ -72,10 +72,12 @@
 								<td>{{ contact.sujet }}</td>
 								{# <td>{{ contact.message }}</td> #}
 								<td>
-									<a href="{{ path('app_contact_show', {'id': contact.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
-									<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-									<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-									</svg></a>
+									<a href="{{ path('app_contact_show', {'id': contact.id}) }}">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
+											<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+											<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+										</svg>
+									</a>
 									{# <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">edit</a> #}
 								</td>
 							</tr>
@@ -91,5 +93,5 @@
 	{% endif %}
 {% endblock %}
 {% block javascripts %}
-			{{ encore_entry_script_tags('messageFilter') }}
+	{{ encore_entry_script_tags('messageFilter') }}
 {% endblock %}
