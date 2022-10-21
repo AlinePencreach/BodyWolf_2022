@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Bodywolf - Salle
+{% endblock %}
 
 {% block body %}
 {% if (app.user ==  salle.manager) or (is_granted ('ROLE_PARTNER'))%}

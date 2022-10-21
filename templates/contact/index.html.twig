@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+<title>
+			{% block title %}Bodywolf - Liste des messages
+			{% endblock %}
+</title>
+
 
 {% block body %}
 	{% if is_granted('ROLE_TEAM') %}

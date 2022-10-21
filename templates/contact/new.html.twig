@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+<title>
+			{% block title %}Bodywolf - Nouveau message
+			{% endblock %}
+</title>
+
+
 {% block body %}
     {{ include('contact/_form.html.twig') }}
 {% endblock %}
