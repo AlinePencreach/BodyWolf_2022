@@ -1,6 +1,6 @@
 # Bienvenue sur le Projet BodyWolf
-## Réaliser pour mes évaluations de fin d'études pour le **_Titre Professionnel Développeur web et web mobile._**
-Ce projet est une application web développé avec Symfony, Bootstrap et JavaScrip.
+## Réalisé pour mes évaluations de fin d'études pour le **_Titre Professionnel Développeur web et web mobile._**
+Ce projet est une application web développé avec Symfony, Bootstrap et JavaScript.
 
 Le lien du projet ici : https://bodywolf.alinepencreach.fr
 Vous trouverez les identifiants dans le copie de l'ECF. 
@@ -8,7 +8,7 @@ Vous trouverez les identifiants dans le copie de l'ECF.
 **Contexte :** 
 Cette application est principalement destiné aux employés de l'entreprise fictive BodyWolf.
 Ainsi depuis leurs espaces ils peuvent, gérer les accès aux différentes options, proposées par BodyWolf, des franchisés de la marque. Grâce principalement à des boutons switch.
-Depuis cet interface les franchisés ne peuvent que voir leurs options activés et les salles qu'ils possèdent. Seul les employé peuvent modifier les droits.
+Depuis cette interface les franchisés ne peuvent que voir leurs options activées et les salles qu'ils possèdent. Seul les employés peuvent modifier les droits.
 
 
 ### Les fonctionnalités du projet :
