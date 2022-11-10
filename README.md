@@ -28,9 +28,10 @@ Depuis cette interface les franchisés ne peuvent que voir leurs options activé
 - Voir les messages reçu sur la plateforme
 - Valider les messages pour l'inscription
 
-### spécification technique :
+### Les spécifications techniques :
 
 Voici les différentes technologies que j’ai utilisé pour ce projet :
+
 	Environnement de travail : 
 	- L’outil Trello pour la gestion de projet avec la méthode kaban de la méthode Agile.
 	- Figma pour réaliser le zoning et les maquettes de l’application.
@@ -42,6 +43,7 @@ Voici les différentes technologies que j’ai utilisé pour ce projet :
 
 	Partie Back-end :
 	- Le framework Symfony avec ses dépendances comme composer et son ORM Doctrine. 
+	
 
 ### Ressources:
 
