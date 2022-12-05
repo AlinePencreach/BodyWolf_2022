@@ -54,16 +54,16 @@ https://colorhunt.co/palette/222831393e4600adb5eeeeee
 - Pour la font : 
 google fonts
 
-- Pour la charte graphique et le maquettage : https://www.figma.com/file/uVd7zzMLWn5cX2ijIlLHIy/BodyWolf-AlinePencreach?node-id=29%3A21
-
 - Recherche d'inspiration page d'accueil sur https://dribbble.com/
 
-- Pour le MAILER DSN
+- le MAILER DSN
 https://mailtrap.io/ 
 video aide : https://www.youtube.com/watch?v=Ujn8n-QxLQQ&ab_channel=DevBrains
 
+### Livrables : 
 
+- La charte graphique et le maquettage : https://www.figma.com/file/uVd7zzMLWn5cX2ijIlLHIy/BodyWolf-AlinePencreach?node-id=29%3A21
 
+- le guide d'utilisation : https://drive.google.com/drive/u/2/folders/17jbWO8nA8lprXx3d4e40tGj-pq_4coWO
 
-
-
+- Les diagrammes UML (diagramme de cas d'utilisation, de séquences et de classe) : https://drive.google.com/drive/u/2/folders/1TmbDqgiK5pglAqqpnnLJ8-UhBnQs7zuU
